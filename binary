@@ -1,3 +1,8 @@
+Cool Computers : Kevin Li , Gloria Lee, Lauren Lee
+APCS
+HW03 -- Codify the Revisions
+2021-09-23
+
 0. What does "base" in "base --x Number System" mean?
   The base in the base --x number system means that the number system will be built on the number x. Base signifies that the number system must be limited to a certain value in a digit. The value of each digit must be from 0 to (x-1). For example, the values of the digits in a base 2 number system are 0 to 1 (2-1). You will never see the number x as a digit in a base x number system. In the base 2 number system, you will never see the number 2 as a digit. 
   
