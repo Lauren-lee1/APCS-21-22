@@ -1,0 +1,3 @@
+-javac <filename>.java compiles code
+- java <file> runs the complied code
+- <file>.class is the compiled Java Byte Code

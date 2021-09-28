@@ -1,0 +1,5 @@
+- while statement
+	- if false, skip body and go to next statement
+	- if true, execute body and go back to step 1
+- for statement is a while statement but the initializer, condition, and update on one line
+break exits current loop and continue continues loop

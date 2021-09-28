@@ -1,0 +1,4 @@
+-Math class provides math operations
+	- Math.pow, Math.PI, Matjh.round
+- return types: return a value with a certain type, void type doesnt return anything
+- write multiple params as (int math, int children) not (int math, children)

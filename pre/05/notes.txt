@@ -1,0 +1,3 @@
+need to return a type of value depending on return type
+-Can also return boolean values
+- javadoc tags ?** //, @param, @ return

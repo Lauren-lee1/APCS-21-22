@@ -1,0 +1,7 @@
+- int[] <variable name>
+-<variable name = new int[]
+to generate an array^^
+
+- elements initialized as 0 but can change balue. 
+- can't use print command to print unless use java.util class
+- variables can reference array but in order to copy it must make new array

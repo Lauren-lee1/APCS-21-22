@@ -1,0 +1,26 @@
+Declaring Variables
+- to store a value, declare a variable
+-syntax: int hour, minute
+
+Assignment
+- use variables to store values with an assignment 
+	-ex: message = "Hello"
+- variable should be same type as value
+
+Printing Variables
+- print() displays value 
+-println() after multiple print() to print on same line
+
+Arithemtic operations
+- performs integer division with integer values
+- +, *, -,/,//,<,>,<=,>=, ==!=
+-"+" for string concatentation
+
+-use final to declare constant
+- format text with printf
+- use typecase to convert floating pt to int
+-Modulus (%) operator to find remainder
+-Scanner class can take input
+
+
+

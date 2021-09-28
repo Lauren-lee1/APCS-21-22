@@ -1,0 +1,14 @@
+-relational operators like !=, ==, <, >, <=, >=
+-logical operations like &&-and, || - or , and ! - not
+De Morgan's law
+	!(A&&B) same as !A||!B
+	!(A||B) same as !A&&!B
+- if conditional statement
+if() {
+	xyz
+}
+	xyz
+}
+- several if statements with chaining
+- boolean variables like boolean flag ;; flag = true
+- return allows terminate method before reach end
