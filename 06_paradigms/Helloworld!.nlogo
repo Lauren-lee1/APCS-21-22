@@ -1,5 +1,5 @@
 to go
-  write "Hello, world"
+  write "Hello, world!"
 end
 @#$#@#$#@
 GRAPHICS-WINDOW

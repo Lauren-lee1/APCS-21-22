@@ -1,0 +1,16 @@
+Lauren Lee
+APCS
+HW07 -- Saving your class
+2021-09-29
+
+(I transcibed my notebook notes into a txt file)
+
+Similarities:
+- All functions need to be called in some way whether it be through a button or using the display function
+- All indicate the start of the function ("to go" in netlogo or "(" in racket)
+- All use indentation
+
+Differences:
+- Python don't indicate an end to the function 
+- Netlogo utilizes a button to call the function
+- In python, you have to use the print function inside of the larger helloworld function and then call the helloworld function while in racket, there is no need to display "Hello, world" if the function call uses display.
