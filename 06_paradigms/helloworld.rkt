@@ -1,5 +1,5 @@
 #lang racket
-(define helloWorld "Hello World"
+(define helloWorld "Hello, world"
   )
 
 (display helloWorld)
