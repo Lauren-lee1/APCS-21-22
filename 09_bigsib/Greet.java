@@ -1,5 +1,5 @@
 /*
-Cool Computers: Lauren Lee, Boe, Gloria Lee, Kevin Li
+Cool Computers: Lauren Lee, Bo, Gloria Lee, Flounder, Kevin Li, Kirby
 APCS
 HW09: What are BigSibs good for?
 2021-10-1
@@ -19,7 +19,7 @@ public class Greet {
 	public static void main (String [] args) {
 		BigSib.greet("Lauren");
 		BigSib.greet("Gloria");
-		BigSib.greet("Nora");
+		BigSib.greet("Kevin");
 	}
 
 
