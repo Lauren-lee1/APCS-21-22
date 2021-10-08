@@ -7,10 +7,10 @@ HW14: Customize your creation
 
 /**
 DISCO
-- constructors are created in the class witht the main method
--Constructors should have a return type and return something to be printed in the main method 
+- to overload, the default constructor should not have parameters
+- constructors go in the helper class 
 QCC
-- can constructors be created in the helper class 
+- I'm still unsure how to overload and finish this specific part of the homework
 **/
 
 public class BigSib {
