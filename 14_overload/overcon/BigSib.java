@@ -1,5 +1,5 @@
 /**
-Lauren Lee and Faize Huda
+Lauren Lee
 APCS
 HW13: Where do BigSibs Come From?
 2021-10-06

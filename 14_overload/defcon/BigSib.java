@@ -1,5 +1,5 @@
 /**
-Lauren Lee 
+Lauren Lee
 APCS
 HW14: Customize your creation
 2021-10-07
