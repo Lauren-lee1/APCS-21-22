@@ -1,4 +1,4 @@
-/*
+/**
 Clueless Cats: Vansh saboo + Tiffany, Lauren Lee + Bo, Diana Akhmedova + Ajax
 APCS
 HW 18: CPA-One
@@ -21,7 +21,7 @@ Clueless Cats's Latest and Greatest Q3 Response:
 - in a seperate method with a String return method, convert the integer to a string
 	(str) <int>
 - return this String
-*/
+**/
 
 public class BankAccount{
 
