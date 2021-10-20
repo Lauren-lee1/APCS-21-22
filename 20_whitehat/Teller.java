@@ -1,5 +1,5 @@
 /**
-Lauren Lee
+Clueless Cats: Vansh saboo + Tiffany, Lauren Lee + Bo, Diana Akhmedova + Ajax
 APCS
 HW20: External Audit
 2021-10-09
