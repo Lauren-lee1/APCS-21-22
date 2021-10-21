@@ -1,4 +1,17 @@
+/**
+Clueless Cats: Vansh saboo + Tiffany, Lauren Lee + Bo, Diana Akhmedova + Ajax
+APCS
+HW21: STAtisTically Speaking...
+2021-10-20
+**/
 
+/**
+DISCO
+- to convert a double to an integer, round the double twice
+- when the square root of a negative integer is found, the result is 0
+QCC
+- how do I write a method to find the square root of a number without using Math.sqrt or Math.pow
+**/
 
 public class StatsDriver{
 	public static void main(String[] args) {
