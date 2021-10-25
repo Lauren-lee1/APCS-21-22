@@ -6,7 +6,6 @@ public class Driver {
 
 
     //test default constructor
-  //  /*===================TOP==========================
       Coin mine = new Coin();
       //test 1st overloaded constructor
       Coin yours = new Coin( "quarter" );
@@ -29,8 +28,19 @@ public class Driver {
       else {
         System.out.println( "No match. Firestarter you can not be." );
       }
-//      ====================BOTTOM======================*/
 
+	mine.reset("heads", 0.5);
+	yours.reset("heads",0.5);
+	int matchCounter = 0;
+	while (matchCounter <  65536 && matchCounter % 2005 != 0){
+		mine.flip();
+		yours.flip();
+		if (yours.equals(mine) == true) {
+			matchCounter = matchCounter + 1;
+		}
+	}
+	int totalHeads =  yours.getHeadsCtr() + mine.getHeadsCtr();
+	System.out.println(yours.getHeadsCtr() + mine.getHeadsCtr() + " heads have come up" + "\n" + matchCounter + " matches have occured");
   }//end main()
 
 }//end class
