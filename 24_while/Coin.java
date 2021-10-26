@@ -1,12 +1,3 @@
-/**
-Dancing HotDogs: Lauren Lee, Jonathan Song
-APCS
-HW23: What does Equality Look like?
-2021-10-24
-time spent: 3.5 hrs
-**/
-
-
 import java.lang.Math;
 
 public class Coin {
