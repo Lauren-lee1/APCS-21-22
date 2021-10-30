@@ -10,9 +10,10 @@ public class string{
 		int x = 0;
 		String output = "";
 		while (x<str.length()){
-			output = output + str.substring(x) + str.substring(x);
+			output = output + str.substring(x, x+1) + str.substring(x, x+1);
 			x=x+1;
 		}
+		output = output + str.substring(x) + str.substring(x);
 		return output;
 	}
 }
