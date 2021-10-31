@@ -1,40 +1,42 @@
 public class codingBat{
 
 	public static void main(String [] args){
-		System.out.println("Test cases for doublChar()");
-		System.out.println(doubleChar("The") + "...should be "TThhee"");
-		System.out.println(doubleChar("AAbb" + " ...should be "AAAAbbbb""));
-		System.out.println(doubleChar("Hi-There" + " ...should be "HHii--TThheerree"));
+    		System.out.println();
 
-		System.out.println();
+    		System.out.println("Test cases for doublChar()");
+		System.out.println(doubleChar("The") + "...should be TThhee");
+		System.out.println(doubleChar("AAbb") + " ...should be AAAAbbbb");
+		System.out.println(doubleChar("Hi-There") + " ...should be HHii--TThheerree");
+
+    		System.out.println();
 		System.out.println("Test cases for countHi()");
-		System.out.println(countHi("abc hi ho" + " ...should be "1""));
-		System.out.println(countHi("ABChi hi" + " ...should be "2""));
-		System.out.println(countHi("hihi") + " ...should be "3"");
+		System.out.println(countHi("abc hi ho") + " ...should be 1");
+		System.out.println(countHi("ABChi hi") + " ...should be 2");
+		System.out.println(countHi("hihi") + " ...should be 2");
 
-		System.out.println();
+    		System.out.println();
 		System.out.println("Test cases for catDog()");
-		System.out.println(catDog("catcat") + " ...should be "true"");
-		System.out.println(catDog("catcat") + " ...should be "false"");
-		System.out.println(catDog("1cat1cadodog") + " ...should be "true"");
+		System.out.println(catDog("catdog") + " ...should be true");
+		System.out.println(catDog("catcat") + " ...should be false");
+		System.out.println(catDog("1cat1cadodog") + " ...should be true");
 
-		System.out.println();
+    		System.out.println();
 		System.out.println("Test cases for endThere");
-		System.out.println(endOther("Hiabc", "abc") + " ...should be "true"");
-		System.out.println(endOther("AbC", "HiaBc") + " ...should be "true"");
-		System.out.println(endOther("abc", "abXabc") + " ...should be "true"");
+		System.out.println(endOther("Hiabc", "abc") + " ...should be true");
+		System.out.println(endOther("AbC", "HiaBc") + " ...should be true");
+		System.out.println(endOther("abc", "abXabc") + " ...should be true");
 
-		System.out.println();
+    		System.out.println();
 		System.out.println("Test cases for xyzThere()");
-		System.out.println(xyzThere("abcxyz") + " ...should be "true"");
-		System.out.println(xyzThere("abc.xyz") + " ...should be "false"");
-		System.out.println(xyzThere("xyz.abc") + " ...should be "true"");
+		System.out.println(xyzThere("abcxyz") + " ...should be true");
+		System.out.println(xyzThere("abc.xyz") + " ...should be false");
+		System.out.println(xyzThere("xyz.abc") + " ...should be true");
 
-		System.out.println();
+   		System.out.println();
 		System.out.println("Test cases for bobThere()");
-		System.out.println(bobThere("abcbob") + " ...should be "true"");
-		System.out.println(bobThere("b9b") + " ...should be "true"");
-		System.out.println(bobThere("bac") + " ...should be "false"");
+		System.out.println(bobThere("abcbob") + " ...should be true");
+		System.out.println(bobThere("b9b") + " ...should be true");
+		System.out.println(bobThere("bac") + " ...should be false");
 
 	}
 
