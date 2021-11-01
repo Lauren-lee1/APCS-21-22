@@ -1,4 +1,11 @@
-public class string{
+/**
+Lauren Lee
+APCS
+HW28 -- PPMP
+2021-10-31
+time spent: 5
+**/
+public class codingBat{
 
 	public static void main(String []args){
 		System.out.println("Test cases for helloName()");
