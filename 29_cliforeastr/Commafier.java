@@ -3,6 +3,7 @@ Clueless Cats: Vansh saboo + Tiffany, Lauren Lee + Bo, Diana Akhmedova + Ajax
 APCS
 HW29: Which Way Do You Roll?
 2021-11-2
+Time Spent: 2.0
 **/
 
 /**
