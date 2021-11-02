@@ -1,3 +1,20 @@
+/**
+Clueless Cats: Vansh saboo + Tiffany, Lauren Lee + Bo, Diana Akhmedova + Ajax
+APCS
+HW29: Which Way Do You Roll?
+2021-11-2
+**/
+
+/**
+DISCO:
+- we can't convert an int directly to a String. We have to convert the int to an Integer, then to a string. 
+- Integer.parseInt() will take a String input and convert it to an integer
+-a for each loop will take the args from the main method parameter which will be a string and do the body
+QCC:
+-what is the difference between an Integer and an int?
+-why can an Integer convert to a String but an int cannot?
+**/
+
 public class Commafier{
 
 	public static void main(String[] args){
