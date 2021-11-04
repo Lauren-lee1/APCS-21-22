@@ -3,7 +3,7 @@
  * APCS
  * HW31 -- Otnay Ybay ethay Airhay Onway Ymay Inneechay Inchay Inchay
  * 2021-11-04
- * time spent: _hrs
+ * time spent: 1.0hrs
  *
  * class Pig
  * a Pig Latin translator
