@@ -1,5 +1,4 @@
 
-   
 /**
 Ellowyay Unflowersay Arlkesspay (Yellow Sunflower Sparkles)
 Diana Akhmedova + Ajax, Lauren Lee + Bo, Emily Ortiz + Applesauce
