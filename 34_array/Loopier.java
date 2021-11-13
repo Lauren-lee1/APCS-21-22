@@ -1,11 +1,18 @@
-/*
+/**
 TNPG: Perfect Purple Petunias
 John Gupta-She + Po, Lauren Lee + Bo, Emily Ortiz + Applesauce
 HW 34 -- A Pirate's Life for Me
 2021-11-12
-time spent:
-*/
+time spent:3.0
+**/
 
+/**
+DISCO:
+- to count the recursions, we can use an instance variable so it doesn't reset every recursion
+- if we use an instance variable, we should reset the counter after it is invoked so that it doesn't affect other cases
+QCC:
+- How do we create the recursive linear search function without an instance variable?
+**/
 public class Loopier{
 
 	private static int counter=0;
@@ -38,6 +45,7 @@ public class Loopier{
 	public static int linSearchR(int[] a, int target){
 		int output;
 		if (a.length == 0){
+			counter = 0;
 			return -1;
 		} else if (a[0] == target){
 			output = counter;
@@ -107,7 +115,7 @@ public class Loopier{
 		System.out.println("tests for linSearchR()");
 		System.out.println(linSearchR(a, 1) + " ...should be 0");
 		System.out.println(linSearchR(a, 0) + " ...should be -1");
-		System.out.println(linSearchR(a, 2) + " ...should be 1");
+		System.out.println(linSearchR(a, 4) + " ...should be 3");
 
 		System.out.println();
 		System.out.println("tests for freq()");
