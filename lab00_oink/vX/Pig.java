@@ -1,4 +1,3 @@
-
 /**
 Ellowyay Unflowersay Arlkesspay (Yellow Sunflower Sparkles)
 Diana Akhmedova + Ajax, Lauren Lee + Bo, Emily Ortiz + Applesauce
@@ -12,10 +11,6 @@ DISCO:
 QCC:
 - Having issues with letter y, but it was working in v1.
 - We looked through the sentence to try to find other spaces or punctuation (that would mean there is a new word), then translate the word and put the space/punctuation at the end but it did not work.
-HOW WE UTILIZED SCANNER DEMO (v3):
-- We used Scanner demo to check if the Scanner has another token in its input and used a while loop to find + return the next complete token.
-WHAT CAUSES THE RUNTIME ERROR IN THE SCANNER DEMO:
-- The runtime error in the Scanner demo occurs since the hasNext() method is never false, and it is in a while loop, meaning it will forever loop unless you do ctrl+C (^C).
 NEW IN V3:
 - Added Scanner + a while loop in our main method.
 - Added punctuation at the end of the translated word/phrase.
