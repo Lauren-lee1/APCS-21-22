@@ -32,6 +32,7 @@ public class Loopier{
 		return -1;
   	}
 
+
 	public static int freq(int[] a, int target){
 		int counter = 0;
 		for (int i = 0; i < a.length; i++){
@@ -42,7 +43,7 @@ public class Loopier{
 		return counter;
 	}
 
-	public static int freqRec(int[] a, int target){
+//	public static int freqRec(int[] a, int target){
 		
 	public static void main (String args[]){
 		int[] a = {1,2,1,4};
