@@ -25,6 +25,42 @@ public class arrayOne{
     return total;
   }
 
+  public static int[] rotateLeft3(int[] nums) {
+    int[] output = new int[3];
+    output[0] = nums[1];
+    output[1] = nums[2];
+    output[2] = nums[0];
+    return output;
+  }
+
+  public static int[] reverse3(int[] nums) {
+    int[] output = new int[3];
+    output[0] = nums[2];
+    output[1] = nums[1];
+    output[2] = nums[0];
+    return output;
+  }
+
+  public static int[] maxEnd3(int[] nums) {
+    int max = Math.max(nums[0], nums[2]);
+    int[] output = new int[3];
+    output[0] = max;
+    output[1] = max;
+    output[2] = max;
+    return output;
+  }
+
+  public static int sum2(int[] nums) {
+    if (nums.length == 0){
+      return 0;
+    } else if (nums.length == 1){
+      return nums[0];
+    } else {
+      return nums[0] + nums[1];
+    }
+  }
+
+
   public static void main (String[] args){
     int [] a = {1,2,3,6};
     int[] b = {3, 3, 6};
@@ -33,5 +69,6 @@ public class arrayOne{
     //System.out.println("makePi: " + makePi());
     System.out.println("commonEnd: should be true..." + commonEnd(a, b));
     System.out.println("sum3: should be 12..." + sum3(b));
+    System.out.println("sum2: should be 6..." + sum2(b));
   }
 }
