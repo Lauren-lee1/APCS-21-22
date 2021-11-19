@@ -2,7 +2,7 @@ Lauren Lee
 APCS
 HW36: All Quacked Up -- Appendix D reading on ThinkJava
 2021-11-18
-time spent: start at 10:55
+time spent: 1.0
 
 Types of Errors:
   - COMPILE TIME ERRORS -- syntax errors
