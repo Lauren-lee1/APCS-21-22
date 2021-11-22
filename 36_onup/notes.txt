@@ -1,0 +1,95 @@
+Lauren Lee
+APCS
+HW36: All Quacked Up -- Appendix D reading on ThinkJava
+2021-11-18
+time spent: 1.0
+
+Types of Errors:
+  - COMPILE TIME ERRORS -- syntax errors
+  - RUN TIME ERRORS -- error while the program is running
+      - which means the program has already run
+      - ie. infinite recursion  = StackOverflowError
+  - LOGIC ERRORS -- program does what it was not intended to do
+      - program alr ran
+
+COMPILE TIME ERRORS ::
+- if the compiler reports a lot of error messages, it doesn't necessarily mean there are that many errors. Focus on the first error and continue you down.
+- Error tells you where problem occured but it is where the compiler noticed in not necessarily where it is
+- Common Syntax Errors:
+    - closing and opening parentheses and brackets and quotations marks
+    - upper and lowecase
+    - single quotes for characters, double quotes for strings
+    - in assignments, make sure both sides same type and left is variable and right is value that is assigned
+    - make sure args in right order and right type and obj you are invoking is the right type
+    - ** if invoking a instance method, make sure you are invoking it on an obj w the right type
+    - ** if invoking static method from outside class where it is defined and make sure to specify class name using dot notation
+    - inside an instance method, you can refer to the instance variables without specifying object. If you try that in a static method - "non-static variable x cannot be referenced from a static context"
+  - if doesnt run no matter what:
+    - might be because compiler is compiling different copy/version that the one being edited
+    - try putting syntax error at beginning and if it doesnt find, there is a problem with development environment (*)
+    - DEBUGGING BY BISECTION:
+      - make back up of file you're working on and delete half the code from the og copy and try compiling to see where the error is. After find error, put code together piece by piece
+    - don't always do what the compiler recommends
+
+  RUN TIME ERRORS ::
+    - hanging -- program stops and seems to be doing nothing -- probably means caught in an infinite loop/recursion
+    - add SOP before loop and SOP after the loop and run. If first message appears, you know where it is stuck
+      - - add SOP at end of the loop that displays value of variables and value of condition so output each time through the loop. When loop ends, condition should be false
+    - most of the time a StackOverflowError will appear
+      - check that there is a basecase
+      - if there is a base case but program not reaching it, add SOP at beginning of the method that displays params. When run, should see output every time the method invoked and see values of params. if not moving towards base case = problem
+    - flow of execution problems
+      -add print statement at beginning of method so displays every time method invoked. Also display arguements to check if values are reasonable
+    - EXCEPTION --
+      - when exception occur, displaus name of exception, line where occurred. and stack trace which includes method that was running, method that invoked it, and amethod that invoked that one and so on
+      - NullPointerException:
+        - tried to access instance var or invoke method that is null
+        - figure out which variable is null and why
+      - ArrayIndexOutOfBoundsException:
+        -index using to access array is either negative or greater than largest index
+        - find problem add SOP before to display value of index an dlength of ArrayIndexOutOfBoundsException
+      -StackOverflowError
+      - FileNotFoundException:
+        - java did not find file it was looking for
+      - ArithmeticException:
+        - something wrong w arithmetic operation
+          - ie division by 0
+      - If too many SOP when invoked, either simplify output or program
+        - simplifying output by removing or commenting out SOP that are not helping
+        - simplyfing program by scaling down problem
+        - clean up code by removing experimental and unnecessary parts
+            - if suspected error deeply nested in program, rewrite part with simpler structure
+            - if suspect a large method, split into smaller methods and test seperately
+
+    LOGIC ERRORS ::
+      - Hypothesize about what the program is actually doing
+        - if program not doing what is supposed to, find section in code that performs the function
+        - if something happen that shouldn't, find code that performs the function and see if executing when shouldn't
+        - if unexpected effect -- check up on documentation
+      - change your mental model
+        - break program into components to test independently
+      - common errors
+        - integer division rounds towards zero. For fractions, use double
+        - floating points are approximate so not completely accurate
+        - never use == operater on doubles
+          - ie instead of if(d == 1.23), do if (Math.abs(d-2.33) < .000001)
+        - == checks for if they are identical and .equals() checks if they are equivalent
+        - .equal checks identity, if want diff notation of equivalence, have to overide it
+        - inheritance can lead to subtle logic errors bc you can run inherited code w out realizing it
+      - if large expression and don't know what to expect:
+        - break into series of assignments w temporary variables
+        - order of operations might not be what you unexpected -- computes left to right bc * and / have same precedence
+      - if method doesnt return what is expected
+        - use temporary variables
+        - can display intermediate variables before returning
+      - SOP is not doing anything
+        - if use print instead of println, output stored without being displayed until the next newline
+        - if program terminates without displaying new line, may never see stored output
+        - change some print to println
+      - take a breather/walk
+      - working on smallest output that causes error
+        - have print statements
+        - understand problem well enough to explain it
+        - why kind of bug? last thing you did before this error occured? what test case failed? what part of program? what have you tried?
+      - might have to rethink algo or adjust mental model
+        - draw diagrams
