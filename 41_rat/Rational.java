@@ -1,3 +1,19 @@
+/*****************************************************
+ * Perfect Purple Petunias (John Gupta-She, Lauren Lee, Emily Ortiz)
+ * APCS pd08
+ * HW41 -- Be Rational
+ * 2021-12-1
+ * time spent: 0.5 hrs
+ *****************************************************/
+
+ /*****************************************************
+DISCO:
+* default is a key word
+* double is the most precise floating point primitive
+QCC:
+* why does the toString() method have to be public?
+  *****************************************************/
+
 public class Rational{
 
   private int numerator;
