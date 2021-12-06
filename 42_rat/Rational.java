@@ -64,18 +64,25 @@ public class Rational{
     denominator = a.denominator * denominator;
   }
 
-  private int gcd(){
-    int num = numerator;
-    int den = denominator;
-    while (num != den) {
-      if (num > den) {
-        num = num - den;
-      }
-      else if (den > num) {
-        den = den - num;
-      }
+  private static int gcd(int num, int den){
+    if (num == 0){
+      return den;
     }
-    return num;
+    else{
+      while (num != den) {
+        if (num > den) {
+          num = num - den;
+        }
+        else if (den > num) {
+          den = den - num;
+        }
+      }
+      return num;
+    }
+  }
+
+  private int gcd(){
+    return gcd(numerator, denominator);
   }
 
   private void reduce(){
@@ -124,7 +131,7 @@ public class Rational{
     r.subtract(s);
     System.out.println("value of r after subtraction: " + r + "...8/64");
     System.out.println("value of s after subtraction: " + s + "...1/2");
-    System.out.println("gcd of r: " + r.gcd() + "...2");
+    System.out.println("gcd of r: " + r.gcd() + "...8");
     r.reduce();
     s.reduce();
     System.out.println("value of r after reduction: " + r + "...1/8");
@@ -141,7 +148,6 @@ public class Rational{
     System.out.println("//====================================");
     Rational r3 = new Rational(2, 3);
     Rational r4 = new Rational();
-
     System.out.println(r3);
     System.out.println(r4);
     System.out.println(r3.floatValue());
