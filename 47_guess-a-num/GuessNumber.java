@@ -1,8 +1,8 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
-// HW47 -- ?
-// 2021-12-15w
-// time spent: _ hrs
+// Perfect Purple Petunias (John Gupta-She, Emily Ortiz, Lauren Lee)
+// APCS pd8
+// HW47: Guess Again
+// 2021-12-14
+// time spent: 0.2
 
 /***
  * class GuessNumber -- fun fun fun!
@@ -21,7 +21,11 @@
 
 /***
     DISCO:
+    - to create a random number within a range this is always the formula:
+    (int)(Math.random()*(max-min)+min)
+    - Wnen you guess too low, the lower number will be guess+1 so the user can't guess the number already guessed, same with high
     QCC:
+    - pay careful attention to the _guessCtr because it may be one greater than the actual amount of guesses if you aren't careful
  ***/
 import java.util.Scanner;
 
@@ -59,16 +63,17 @@ public class GuessNumber
   {
     System.out.print("Guess a num bt " + _lo + " & " + _hi + ": ");
     int guess = sc.nextInt();
-    _guessCtr += 1;
     if (guess != _target){
       if (guess<_target){
-        System.out.println("Guess too low");
+        System.out.println("Too low, try again...");
         _lo = guess+1;
+        _guessCtr += 1;
         playRec();
       }
       else{
-        System.out.println("Guess too high");
+        System.out.println("Too high, try again...");
         _hi = guess-1;
+        _guessCtr += 1;
         playRec();
       }
     } else {
@@ -86,29 +91,27 @@ public class GuessNumber
     ==================================================*/
   public void playIter()
   {
-    System.out.print("Guess a num bt " + _lo + " & " + _hi + ": ");
-    int guess = sc.nextInt();
-    while( guess != _target ) {
+    int guess;
+
+    while(true){
+      System.out.print("Guess a num bt " + _lo + " & " + _hi + ": ");
+      guess = sc.nextInt();
+
       if (guess<_target){
-        System.out.println("Guess too low");
+        System.out.println("Too low, try again...");
         _lo = guess+1;
-        System.out.print("Guess a num bt " + _lo + " & " + _hi + ": ");
-        guess = sc.nextInt();
         _guessCtr += 1;
-      } else{
-        System.out.println("Guess too high");
+      } else if (guess>_target){
+        System.out.println("Too high, try again...");
         _hi = guess-1;
-        System.out.print("Guess a num bt " + _lo + " & " + _hi + ": ");
-        guess = sc.nextInt();
         _guessCtr += 1;
+      } else {
+        System.out.println("Correct! " + "It took " + _guessCtr + " guesses");
+        break;
       }
-      //3 cases: we either found it, too hi, too lo
-
-      _guessCtr++;
-
-      System.out.println("Correct! " + "It took " + _guessCtr + " guesses");
     }
   }
+
 
 
   //wrapper for playRec/playIter to simplify calling
@@ -123,12 +126,12 @@ public class GuessNumber
   //main method to run it all
   public static void main( String[] args )
   {
-    /*-----------------------------
+    /*-----------------------------*/
     //instantiate a new game
     GuessNumber g = new GuessNumber(1,100);
     //start the game
     g.play();
-    -----------------------------*/
+    /*-----------------------------*/
   }
 
 }//end class GuessNumber
