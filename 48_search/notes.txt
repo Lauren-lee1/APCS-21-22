@@ -1,0 +1,16 @@
+Perfect Purple Petunias (John Gupta-She, Emily Ortiz, Lauren Lee)
+APCS pd8
+HW47: Guess Again
+2021-12-14
+time spent: 0.2
+
+DISCO:
+  - When trying to compile the code we got this error:
+  ```
+      Note: BinSearch.java uses unchecked or unsafe operations.
+      Note: Recompile with -Xlint:unchecked for details.
+  ```
+  The reason for this error is that Comparable can store many different objects and it is a warning that java may have run time errors when trying to compare two Comparables as they may be different object types
+  The code can still run and the error can be ignored if you know that the objects in Comparable are of the same type
+QCC:
+  - though Lauren used binary operands that aren't allowed for objects, it still ran despite an error. it only runs in some instances though

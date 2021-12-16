@@ -16,8 +16,8 @@ public class BinSearch
   {
     //uncomment exactly 1 of the 2 stmts below:
 
-    return binSearchIter( a, target, 0, a.length-1 );
-    //return binSearchRec( a, target, 0, a.length-1 );
+    //return binSearchIter( a, target, 0, a.length-1 );
+    return binSearchRec( a, target, 0, a.length-1 );
   }
 
 
@@ -29,20 +29,18 @@ public class BinSearch
     int tPos = -1; //init return var to flag value -1
 
     int m = (lo + hi) / 2; //init mid pos var
-    if (hi == lo && a[m] == target){
+    if (hi == lo && a[m].equals(target)){
       tPos = m;
-    }else{
-      if ((int)a[m] < (int)target){
+    }else if (hi != lo) {
+      if (a[m].compareTo(target)<0){
         return binSearchRec(a, target, m+1, hi);
-      } else if ( (int)a[m] >  (int)target){
+      } else if (a[m].compareTo(target)>0){
         return binSearchRec(a, target, lo, m-1);
-      } else if ( (int)a[m] == (int)target){
+      } else if (a[m].equals(target)){
         tPos = m;
           }
-
-
+      }
       return tPos;
-   }
   }//end binSearchRec
 
 
@@ -56,19 +54,20 @@ public class BinSearch
 
     while( lo != hi ) { // run until lo & hi cross
 
-      if (a[m] < target){//update mid pos var
+      if (a[m].compareTo(target)<0){//update mid pos var
         lo = m + 1;
         m = (lo+hi)/2;
-      } else if (a[m] > target) {
+      } else if (a[m].compareTo(target)>0) {
         hi = m-1;
         m = (lo+hi)/2;
-      } else if (a[m] == target){
+      } else if (a[m].equals(target)){
           tPos = m;
-          }
-        }
-      if (hi == lo && a[m] == target){
-        tPos = m;
+          break;
       }
+    }
+    if (a[m].equals(target)){
+      tPos = m;
+    }
 
       // target found
 
