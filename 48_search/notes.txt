@@ -2,7 +2,7 @@ Perfect Purple Petunias (John Gupta-She, Emily Ortiz, Lauren Lee)
 APCS pd8
 HW47: Guess Again
 2021-12-14
-time spent: 0.2
+time spent: 3
 
 DISCO:
   - When trying to compile the code we got this error:
