@@ -2,23 +2,22 @@
 /*****************************************************
  * Perfect Purple Petunias (John Gupta-She, Lauren Lee, Emily Ortiz)
  * APCS pd08
- * HW42 -- Be More Rational
- * 2021-12-1
- * time spent: 0.5 hrs
+ * HW49 -- Rational Standards Compliance
+ * 2021-12-22
+ * time spent: 1.0 hr
  *****************************************************/
 
  /*****************************************************
 DISCO:
-*beware of instance variables/variables created by a function, java is pass-by-value, not reference!
-*map out steps before starting to save you trouble
+* we can typecast objects to be Rational if we already know that that object is Rational
 QCC:
-* why does java throw up a "missing return statement" error when all cases are accounted for?
+* what does implements do in the computer level and why do we need it?
   *****************************************************/
 
-public class Rational{
+public class Rational implements Comparable{
 
-  private int numerator;
-  private int denominator;
+  public int numerator;
+  public int denominator;
 
   public Rational(){
     numerator = 0;
@@ -91,8 +90,8 @@ public class Rational{
     denominator = denominator / gcd;
   }
 
-/**
-  private int compareTo(Rational a){
+
+  public int compareTo(Rational a){
     if (numerator * a.denominator == denominator * a.numerator){
       return 0;
     } else if (numerator * a.denominator > denominator * a.numerator){
@@ -101,11 +100,35 @@ public class Rational{
       return -1;
     }
   }
-**/
+
+  public int compareTo(Object other){
+    if (other instanceof Rational){
+      Rational a = (Rational) other;
+      if (numerator * a.denominator == denominator * a.numerator){
+        return 0;
+      } else if (numerator * a.denominator > denominator * a.numerator){
+        return 1;
+      } else {
+        return -1;
+      }
+    } else {
+      throw new ClassCastException("\nCompareTo() input not a Rational");
+    }
+  }
+
+  public boolean equals(Object other){
+    if (other instanceof Rational){
+      return (compareTo(other) == 0);
+    } else {
+      return false;
+    }
+  }
+/**
   public Rational makeRat(Comparable n){
       Rational o = (Rational) n;
       return o;
   }
+  **/
 
   public static void main(String[] args){
     System.out.println();
