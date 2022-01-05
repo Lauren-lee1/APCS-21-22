@@ -9,7 +9,7 @@
  *
  * ALGO:
  1. select the largest element at move it to the right end
- 2. select the next smallest and move it to the next to right end
+ 2. select the next largest and move it to the next to right end
  3. repeat step 2
  * DISCO
  - selectionSortV should change the input array but when it was printed as coco in the main method, it printed the unsorted version. Why is that?
@@ -71,8 +71,8 @@ public class SelectionSort
     //maxPos will point to position of SELECTION (greatest value)
     int maxPos;
 
-    for(int pass = data.size()-2; pass > 0; pass--) {
-      System.out.println( "\nbegin pass " + (data.size()-pass-1) );//diag
+    for(int pass = data.size()-1; pass >= 0; pass--) {
+      System.out.println( "\nbegin pass " + (data.size()-pass) );//diag
       maxPos = 0;
 
       for( int i = 0; i < pass+1; i++ ) {
@@ -82,7 +82,7 @@ public class SelectionSort
         System.out.println( "maxPos: " + maxPos );//diag
         System.out.println( data );//diag
       }
-      data.add(pass+2,data.get(maxPos));
+      data.add(pass+1,data.get(maxPos));
       data.remove(maxPos);
       System.out.println( "after swap: " +  data );//diag
     }
