@@ -1,31 +1,34 @@
-// Clyde "Thluffy" Sinclair
+// Crabby Chips: Lauren lee and Diana Akhmedova
 // APCS pd8
 // HW53 -- implementing insertion sort
 // 2022-01-06r
-// time spent:  hrs
+// time spent: 0.5 hrs
 
 /******************************
  * class InsertionSort -- implements InsertionSort algorithm
  *
  * ALGO:
- *
+ 1. sart with the sorted partiion osize of one
+ 2. insert the one value at a time into the sorted region, swapping with the value's adjacent element when necessary
+ 3. Repeat until sorted
  * DISCO
- *
+ * The void method does not change the actual ArrayList. Because of this, when we want to return the sorted version, we have ot populate a new array with the sorted elements.
  * QCC
  * q0: How many passes to sort n elements?
- * a0:
+ * a0: n-1
  * q1: What do you know after pass p?
- * a1:
+ * a1:the first p+1 elements are sorted
  * q2: How will you know when sorted?
- * a2:
+ * a2: You know it is sorted once all swaps are completed.
  * q3: What constitues a pass?
- * a3:
+ * a3: The first p+1 elements are sorted through walking the first unsorted element into its right place in the partition
  * q4: What must you track?
- * a4:
+ * a4: You must track the partition.
  ******************************/
 
 
 import java.util.ArrayList;
+@SuppressWarnings("unchecked")
 
 public class InsertionSort
 {
@@ -61,24 +64,27 @@ public class InsertionSort
   // postcondition: data's elements sorted in ascending order
   public static void insertionSortV( ArrayList<Comparable> data )
   {
-    for(int x = 0, x < data.length(); x++  ) {
+    shuffle(data);
+    for(int x = 0; x < data.size()-1; x++  ) {
       //partition marks first item in unsorted region
+      int partition = x;
 
       System.out.println( "\npartition: " + partition + "\tdataset:"); //diag
       System.out.println( data );
 
       //traverse sorted region from right to left
-      for( int i = x+1; i>=0; i-- ) {
-
+      for( int i = x+1; i>0; i-- ) {
         // "walk" the current item to where it belongs
         // by swapping adjacent items
         if (data.get(i).compareTo(data.get(i-1)) < 0  ) {
-          int 
+          //Comparable o = data.get(i);
           System.out.println( "swap indices "+(i-1)+" & "+i+"..." ); //diag
-
+          data.add(i-1,data.get(i));
+          data.remove(i+1);
         }
-        else
+        else{
           break;
+        }
       }
     }
   }//end insertionSortV
@@ -125,7 +131,7 @@ public class InsertionSort
       System.out.println( "\nArrayList coco after sorting:\n" + coco );
       ============================================*/
 
-    /*==========for AL-returning methods==========
+    /*==========for AL-returning methods==========**/
       System.out.println( "*** Testing non-void version... *** " );
       ArrayList glen = new ArrayList<Integer>();
       glen.add(7);
@@ -146,7 +152,7 @@ public class InsertionSort
       + cocoSorted );
       System.out.println( "\nArrayList coco after sorting:\n" + coco );
       System.out.println( coco );
-      ============================================*/
+    /**  ============================================*/
 
   }//end main
 
