@@ -10,6 +10,12 @@
  * @author Laurie White
  * @version April 2012
  */
+ /*
+Question:
+When the keyword is included in another word the programs acts as if the keyword was used even when it wasn't meant to. In order to fix this, we can change
+the function to look for the indexOf " no " with spaces on each side to signify it is a seperate word but this would not work if just "no" was inputed.
+public class Magpie2
+*/
 public class Magpie2
 {
 	/**
@@ -27,6 +33,9 @@ public class Magpie2
 	 * @param statement
 	 *            the user statement
 	 * @return a response based on the rules given
+	 */
+	 /*
+	 When inputted a sentence like "My mother has a dog but no cat" with multiple keywords, it prioritizes the earliest if/ifelse statments
 	 */
 	public String getResponse(String statement)
 	{
