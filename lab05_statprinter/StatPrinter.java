@@ -1,4 +1,4 @@
-// Pokelovo - Jack Chen, David Chen, Lauren lee
+// Pikovo - Jack Chen, David Chen, Lauren lee
 // APCS pd8
 // L05 -- pulling it together
 // 2022-02-03r
@@ -62,16 +62,18 @@ public class StatPrinter {
   // _frequency would be [0,0,3,2,0,1]
   public StatPrinter(ArrayList<Integer> data) {
     /* YOUR IMPLEMENTATION HERE */
+    _frequency = new ArrayList<Integer>(data.size());
+
     if (data.size() > 0) {
 
-      for (int n = 0; n < max(data) + 1; n++) {
+      for (int n = 0; n < max(data); n++) {
+        int counter = 0;
         for (int i = 0; i < data.size(); i++) {
-          int counter = 0;
-          if (_frequency.get(n) == i) {
+          if (n == i) {
             counter++;
           } // counts instances
-          _frequency.add(counter);
         } // adds frequency for each # into empty frequency array
+        _frequency.add(counter);
       } // frequency is the size of the max + 1
 
     }
@@ -103,31 +105,44 @@ public class StatPrinter {
   // isLocalMode(1) -> true
   // isLocalMode(5) -> true
   public boolean isLocalMode(int i) {
-    /* YOUR IMPLEMENTATION HERE */
-    return true;
+    if (_frequency.get(i)>0 && _frequency.get(i)<_frequency.size()-1 &&_frequency.get( _frequency.get(i) - 1 ) < _frequency.get( _frequency.get(i) )&& _frequency.get( _frequency.get(i) + 1 ) < _frequency.get( i )){
+      return true;
+    } else {
+      return false;
+    }
   }
+
 
   // *************** QUESTION 04 **************************
   // postcond: returns list of modes in _frequency
   public ArrayList<Integer> getLocalModes() {
-    /* YOUR IMPLEMENTATION HERE */
+     ArrayList<Integer> localModes = new ArrayList<Integer>();
+     for (int i : _frequency){
+       if (isLocalMode(i) == true){
+         localModes.add(i);
+       }
+     }
     return _frequency;
   }
 
+/**
+0 : **
+1 : ****
+2 : **
+3 : ********
+4 : ****
+5 : ******
+6 : **********
+**/
   // *************** QUESTION 05 **************************
   // precond: longestBar > 0
   public void printHistogram(int longestBar) {
-    String s = "";
-    for (int i = 0; i < longestBar + 1; i ++) {
-      if (i < _frequency.size()) {
-        for (int h = 0; h < _frequency.get(i) + 1; h ++) {
-          s += "*";
-        }
-        System.out.println(i + " : " + s);
-        s = "";
+    for (int i : _frequency){
+      System.out.println(i + " : ");
+      for (int n = 0; n < _frequency.get(i); n++){
+        System.out.print("*");
       }
-
-    } // print
+    }
   }
 
 }// end class StatPrinter
