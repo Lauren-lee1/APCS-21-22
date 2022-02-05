@@ -1,0 +1,35 @@
+// Pikovo - Jack Chen, Lauren lee
+// APCS pd8
+// L05 -- pulling it together
+// 2022-02-03r
+// time spent: 1 hrs
+
+
+
+StatPrinter => Set the size of the array of _frequency to the maximum value in data array,
+after that, fill _frequency with 0's. A for loop iterates through each index in _frequency (each index
+representing a value) and an inner for loop that iterates through data and adds the # of appearances
+of the number to _frequency.
+
+Integer max => If the value is larger than i, it would be set equal to i. i in the end would be
+the largest number in the array.
+
+boolean isLocalMode => If it meets all the requirements for being a local mode, method returns true. Otherwise,
+it would return false.
+
+ArrayList<Integer> getLocalModes => Iterates through the array data to find the local modes and adds them to
+an array called localModes.
+
+void PrintHistogram => Iterates through _frequency with a for loop. There is an inner for loop to add stars to each
+bar. We need to scale it with the longst bar, so we take the largest value in frequency and divide it by longestBar to
+get our scale. The number of stars printed would be according to the scale.
+
+
+DISCO: * Modified our statprinter to accomodate for the fact that the local mode take sin information
+from the original array and not the frequency array
+* The frequency array can not be null, so we put placeholder 0's to prevent NullPointerException
+* Big O classification of n^2 means the method short circuits
+
+
+QCC: * Why was it that you want to use the original array to find the local mode instead of _frequency?
+* for getLocalModes(),the method uses isLocalMode() as a helper. getLocalModes() goes through the array n times but isLocalMode() is constant. Does a helper function factor into getLocalModes()'s big O classification

@@ -1,9 +1,8 @@
-// Pokelovo - Jack Chen, David Chen, Lauren lee
-// APCS pd8
+// Clyde "Thluffy" Sinclair
+// APCS pd0
 // L05 -- pulling it together
 // 2022-02-03r
-// time spent: 0.5 hrs
-
+// time spent:  hrs
 
 /***
  * class StatPrinterApp

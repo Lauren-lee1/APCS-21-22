@@ -1,4 +1,4 @@
-// Pokelovo - Jack Chen, David Chen, Lauren lee
+// Pikovo - Jack Chen, Lauren lee
 // APCS pd8
 // L05 -- pulling it together
 // 2022-02-03r
@@ -60,27 +60,34 @@ public class StatPrinter {
   // _frequency.get(i) returns frequency of i in data
   // eg, for data [2,3,2,5,2,3]
   // _frequency would be [0,0,3,2,0,1]
+
+  // Big O Classification: O(n*max)
   public StatPrinter(ArrayList<Integer> data) {
     /* YOUR IMPLEMENTATION HERE */
-    if (data.size() > 0) {
+    _frequency = new ArrayList<Integer>();
 
-      for (int n = 0; n < max(data) + 1; n++) {
+    for (int i = 0; i < max(data) + 1; i ++) {
+      _frequency.add(0);
+    }
+
+    for (int n = 0; n < _frequency.size(); n++) {
+        int counter = 0;
         for (int i = 0; i < data.size(); i++) {
-          int counter = 0;
-          if (_frequency.get(n) == i) {
+          if (data.get(i) == n) {
             counter++;
           } // counts instances
-          _frequency.add(counter);
-        } // adds frequency for each # into empty frequency array
-      } // frequency is the size of the max + 1
+       _frequency.set(n, counter);
+        }
+      }
 
-    }
 
   } // StatPrinter
 
   // *************** QUESTION 01 **************************
   // precond: data.size() > 0
   // postcond: returns largest integer in data
+
+ // Big O Classification: O(n)
   public Integer max(ArrayList<Integer> data) {
     /* YOUR IMPLEMENTATION HERE */
     int max = 0;
@@ -102,32 +109,57 @@ public class StatPrinter {
   // isLocalMode(0) -> false
   // isLocalMode(1) -> true
   // isLocalMode(5) -> true
+
+    //Big O Classification: O(1)
   public boolean isLocalMode(int i) {
-    /* YOUR IMPLEMENTATION HERE */
-    return true;
-  }
+
+    if ((i > 0) && (i < _frequency.size() - 1) && (_frequency.get( i - 1 ) < _frequency.get( i ))
+    && (_frequency.get( i + 1 ) < _frequency.get( i ))) {
+
+      return true;
+
+    }
+    else {
+      return false;
+    }
+  } // isLocalMode
+
 
   // *************** QUESTION 04 **************************
   // postcond: returns list of modes in _frequency
+
+  // Big O Classification: O(n)
   public ArrayList<Integer> getLocalModes() {
-    /* YOUR IMPLEMENTATION HERE */
-    return _frequency;
+     ArrayList<Integer> localModes = new ArrayList<Integer>();
+     for (int i : _frequency){
+       if (isLocalMode(i) == true){
+         localModes.add(i);
+       }
+     }
+    return localModes;
   }
 
+/**
+0 : **
+1 : ****
+2 : **
+3 : ********
+4 : ****
+5 : ******
+6 : **********
+**/
   // *************** QUESTION 05 **************************
   // precond: longestBar > 0
-  public void printHistogram(int longestBar) {
-    String s = "";
-    for (int i = 0; i < longestBar + 1; i ++) {
-      if (i < _frequency.size()) {
-        for (int h = 0; h < _frequency.get(i) + 1; h ++) {
-          s += "*";
-        }
-        System.out.println(i + " : " + s);
-        s = "";
-      }
 
-    } // print
+  // Big O classification: Q(longestBar / max(_frequency)) * _frequency.get(i)*n)
+  public void printHistogram(int longestBar) {
+    for (int i = 0; i < _frequency.size(); i ++){
+      String star = "";
+      for (int n = 0; n < (longestBar / max(_frequency)) * _frequency.get(i); n++){
+        star += "*";
+      }
+      System.out.println(i + ":" + star);
+    }
   }
 
 }// end class StatPrinter
