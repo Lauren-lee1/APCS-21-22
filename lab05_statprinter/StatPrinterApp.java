@@ -56,7 +56,8 @@ public class StatPrinterApp
     al2.add(3);
 
     StatPrinter sp2 = new StatPrinter( al2 );
-
+    System.out.println("2,3,2,5,2,3");
+    System.out.println("0,0,3,2,0,1");
     System.out.println( "sp2 testing: " );
     System.out.println( "al2 max: " + sp1.max(al2) );
     System.out.println( "local modes: " );

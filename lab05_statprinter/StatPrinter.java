@@ -61,7 +61,7 @@ public class StatPrinter {
   // eg, for data [2,3,2,5,2,3]
   // _frequency would be [0,0,3,2,0,1]
 
-  // Big O Classification: O(n*max)
+  // Big O Classification: O(n^max)
   public StatPrinter(ArrayList<Integer> data) {
     /* YOUR IMPLEMENTATION HERE */
     _frequency = new ArrayList<Integer>();
@@ -151,7 +151,7 @@ public class StatPrinter {
   // *************** QUESTION 05 **************************
   // precond: longestBar > 0
 
-  // Big O classification: Q(longestBar / max(_frequency)) * _frequency.get(i)*n)
+  // Big O classification: Q(n*(longestBar / max(_frequency)) * _frequency.get(i))
   public void printHistogram(int longestBar) {
     for (int i = 0; i < _frequency.size(); i ++){
       String star = "";
