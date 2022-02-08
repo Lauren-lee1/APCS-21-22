@@ -1,0 +1,18 @@
+// Pikovo - Jack Chen, Lauren lee
+// APCS pd8
+// HW60 -- A Termite is-a Turtle, a Thinker is-a Turle
+// 2022-02-07
+// time spent: 0.5 hrs
+
+DISCO
+- Every thinker must be following the firmware correctly
+- Every thinker must be present
+- There must be benchmarks in which course of action changes
+- All the cards must go back to the original person
+- Every thinker should do the minimal amount of work
+- A one card deck is automatically sorted
+QCC
+THINKER FIRMWARE (Instructions each turtle follows):
+- If you are give one deck of cards, split it up and give both decks to another thinker if they are empty handed
+- Once you only have one card, give it back to who you got it from
+- If you receive two decks, merge and sort these sorted decks. Then, give this merged deck back to the thinker you got it from
