@@ -1,0 +1,14 @@
+Pikovo - Jack Chen, Lauren Lee
+APCS pd8
+HW61 -- Instructions so simple
+2022-02-08
+time spent: 0.5 hrs
+
+DISCO
+*length of an array is name.length not name.length()
+*set() is for ArrayList/needs to be imported, instead use name[i]
+*Don't use the shorter list as a benchmark as to when to stop it wouldn't work in a scenario where the elements of the shorter array is a lot larger
+
+
+QCC:
+* can mergesort be done iteratively?
