@@ -65,6 +65,7 @@ public class MergeSort
    ******************************************************/
   public static int[] sort( int[] arr )
   {
+    System.out.println("step");
     if(arr.length>1){
       int[] one = new int[arr.length/2];
       for (int i = 0; i < (arr.length/2); i++){
@@ -126,6 +127,9 @@ public class MergeSort
       printArray( merge(arr4,arr6) );
 
       System.out.println("\nSorting arr4-7...");
+      printArray( sort( arr1 ) );
+      printArray( sort( arr2 ) );
+      printArray( sort( arr3 ) );
       printArray( sort( arr4 ) );
       printArray( sort( arr5 ) );
       printArray( sort( arr6 ) );

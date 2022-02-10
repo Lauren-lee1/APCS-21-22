@@ -1,0 +1,29 @@
+Activity 1 -- Introduction (Reviews and Sentiment value)
+
+1a. Record the method signature in the space below
+public static double sentimentVal( String word )
+1b. Does this method require a parameter? If so, what type of parameter is required? What happens if you pass a different type of parameter instead?
+This method requires a String parameter. When we try to pass a int in as a parameter, there is an error message when we try to compile:
+Review.java:167: error: incompatible types: int cannot be converted to String
+    sentimentVal(3);
+                 ^
+1c Does the Method return a value? If so, what is the return type?
+It returns a double.
+
+2.
+Method Call       Return value
+absence           -0.8
+christopher       0.35
+salmon            -0.1
+
+3. Determine whether or not each statement would compile.
+a. double num = sentimentVal("warm");
+  yes because the parameter and return values correspond with this declaration.
+b. String word = sentimentVal(0.5);
+  No because the return value is a double but word is a string and the parameter should be a String but the input is a double.
+c. double x = sentimentval("good", "bad");
+  No because sentimentVal does not take two parameters
+
+
+  Activity 2 -- Sentimnet Value and Star Ratings
+  
