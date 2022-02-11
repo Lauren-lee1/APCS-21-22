@@ -163,19 +163,77 @@ public class Review {
   }
 
   public static double totalSentiment(String fileName){
-    String text = textToString(blobFish.txt);
-    text = removePunctuation(text);
-    double total = 0
-    int x = 0;
-    while (x < text.length()){
-      if (text.substring(x,x+1).equals(" ")){
-        total = total + sentimentVal(text.substring)
+    String text = textToString(fileName);
+    // text = removePunctuation(text);
+    // System.out.println(text);
+    double total = 0;
+    int counter = 0;
+    int i = 0;
+    while (i < text.length() - 1) {
+
+      if ((text.substring(i,i+1)).equals(" ")) {
+        // System.out.println(removePunctuation(text.substring(i - counter, i)));
+        total = total + sentimentVal(removePunctuation(text.substring(i - counter, i)));
+        counter = 0;
       }
+      counter = counter +1;
+      i ++;
     }
+
+    total = total + sentimentVal(removePunctuation(text.substring(i - counter, text.length())));
+    // System.out.println(removePunctuation(text.substring(i - counter, text.length())));
+
+    return total;
+  } // total snetiment
+
+  public static int starRating(String fileName) {
+    if (totalSentiment(fileName) < -6) {
+      return 0;
+    }
+    else if (totalSentiment(fileName) < -3) {
+      return 1;
+    }
+    else if (totalSentiment(fileName) < 0) {
+      return 2;
+    }
+    else if (totalSentiment(fileName) > 0) {
+      return 3;
+    }
+    else if (totalSentiment(fileName) > 2) {
+      return 4;
+    }
+    else if (totalSentiment(fileName) > 4) {
+      return 5;
+    }
+    else {return 0;}
+  } // star ratings
+
+  public static String fakeReview(String fileName) {
+    String text = textToString(fileName);
+    int counter= 0;
+    int i = 0;
+    int adjloc = 0;
+    String total = "";
+    text.indexOf("*", i);
+    while (i < text.length()) {
+      if ((text.substring(i,i+1)).equals("*")) {
+        adjloc = text.indexOf("*", i);
+        total = total + text.substring(i - counter, adjloc) + randomAdjective();
+        i += randomAdjective().length() - 1;
+        counter = 0;
+      }
+      counter = counter +1;
+      i ++;
+    }
+    return total;
   }
+
   public static void main(String[] args){
     System.out.println(sentimentVal("absence") + " ... should return -0.8");
     System.out.println(sentimentVal("christopher") + " ... should return 0.35");
     System.out.println(sentimentVal("salmon") + " ... should return -0.1");
+    System.out.println("Review of blobfish... " + totalSentiment("blobFish.txt"));
+    System.out.println("Review of blobfish... in stars! " + starRating("blobFish.txt"));
+    System.out.println("Fake review... " + fakeReview("blobFish.txt"));
   }
 }
