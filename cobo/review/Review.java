@@ -210,19 +210,26 @@ public class Review {
 
   public static String fakeReview(String fileName) {
     String text = textToString(fileName);
-    int counter= 0;
+    int countera= 0;
+    int counterw = 0;
     int i = 0;
     int adjloc = 0;
     String total = "";
+    int totalleng = text.length();
     text.indexOf("*", i);
-    while (i < text.length()) {
+    while (i < totalleng) {
+      if((text.substring(i, i+1).equals(" "))){
+        counterw = 0;
+      }
       if ((text.substring(i,i+1)).equals("*")) {
         adjloc = text.indexOf("*", i);
-        total = total + text.substring(i - counter, adjloc) + randomAdjective();
-        i += randomAdjective().length() - 1;
-        counter = 0;
+        total = total + text.substring(i - countera, i-counterw) + randomAdjective();
+      //  i += randomAdjective().length() - 1;
+      //  totalleng = totalleng + randomAdjective().length()-1;
+        countera = 0;
       }
-      counter = counter +1;
+      countera = countera +1;
+      counterw = counterw + 1;
       i ++;
     }
     return total;
