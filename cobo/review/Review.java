@@ -209,15 +209,6 @@ public class Review {
   } // star ratings
 
   public static String fakeReview(String fileName, int type) {
-    if (type == 0){
-      String adj = randomPositiveAdj();
-    }
-    else if (type == 1){
-      String adj = randomNegativeAdj();
-    } else {
-      String adj = randomAdjective();
-    }
-
     String text = textToString(fileName);
     int i = 0;
     String total = "";
