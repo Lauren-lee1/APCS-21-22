@@ -54,14 +54,18 @@ c. double x = sentimentval("good", "bad");
     other static methods.
 
   6. Describe how fakeReview can be modified to make a positive or negative review.
-    Instead of using randomAdjective, we would specify if we wanted to use randomPositiveAdj or randomNegativeAdj. There could be another parameter,
-    such as true or false, so that true can correspond to positive reviews and false can be for negative reviews
+    Instead of using randomAdjective, we would specify if we wanted to use randomPositiveAdj or randomNegativeAdj.
 
     Activity 4 == Create positive or negative reviews
 
     1. People would want to boost another person's ego! :)
     2. People would want to generate bad reviews to trash on other people.
-    3.
+    3. A strong review should not have slang or curse words in it. It should also specify if it is a neutral review or a positive/negative review.
+    There could be another parameter, such as pos, neg, and neu depending on the type of review the user wants to generate. If the user inputs pos,
+    and if the word from the string is between a "*" and a " ", replace the word with a random positive adj. If the user inputs neg, and the word
+    from the string is between a "*" and " ", replace it with a random negative adj. Else, replace that word with a random adj. If the word does not have
+    a "*" in front of it, add it to the string total. Once the method iterates through the entire string, it would return the string total which
+    has the generated review.
 
     5. What does wordOne = wordOne.subString(1) do?
     It returns all the characters following index 1
