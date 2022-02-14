@@ -1,4 +1,16 @@
-errata:
+Pikovo - Jack Chen, Lauren Lee
+APCS pd8
+L06: Read/Review/Expand
+2022-02-13
+time spent: 2.0 hrs
 
-* hashmap is java equivalent to the python dictionaries you know and love
-* nothing else should seem too unfamiliar to a Thinker
+DISCO:
+*textToString() allows us to read the text from a file
+*generally, read closely with the questions and directions since they seem to be asking very similar things
+
+QCC:
+* How can we work through this lab faster?
+
+Notes:
+* a lot of reading and understanding what the lab is asking of us
+* some questions sounded similar so we had to take some time to digest the questions. 
