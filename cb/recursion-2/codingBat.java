@@ -38,26 +38,23 @@ start 3 target 2 (14)8
 */
 
 
-/*
+
   public static boolean splitArray(int[] nums){
-    if (nums.length() < 2){
-      return false;
-    } else {
-      if (add(nums, 0, (nums.length()-1)/2) == add(nums, (nums.length()-1)/2+1, nums.length()-1)){
-        return true;
-      }
-    }
+    return add(nums, 0, 0, 0);
   }
 
-  public static int add(int[] nums , int start, int end){
-    int i = end - start  +1;
-    if (i == 0){
-      return num[0];
-    } else {
-      i--;
-      return num[i] + add(nums);
+  public static boolean add(int[] nums , int start, int g1, int g2){
+    if (start >= nums.length){
+      if (g1 == g2){
+        return true;
+      }
+    } else if(add(nums, start+1, g1 + nums[start],g2) ==  true){
+      return true;
+    } else if (add(nums, start+1, g1, g2+nums[start]) == true){
+      return true;
     }
-  }*/
+    return false;
+  }
 
   // [ 1 2 3 ]
 
@@ -67,10 +64,14 @@ start 3 target 2 (14)8
     System.out.println(groupSum(0, a, 10) + "...should be true");
     System.out.println(groupSum(0, a, 14) + "...should be true");
     System.out.println(groupSum(0, a, 9) + "...should be false");
-/*
-    System.out.println(splitArray([2, 2]) + "...should be true");
-    System.out.println(splitArray([2, 3]) + "...should be false");
-    System.out.println(splitArray([5, 2, 3]) + "...should be true");
-    */
+
+    int[] b = new int [] {2, 2};
+    int[] c = new int [] {2, 3};
+    int[] d = new int [] {5, 2, 3};
+
+    System.out.println(splitArray(b) + "...should be true");
+    System.out.println(splitArray(c) + "...should be false");
+    System.out.println(splitArray(d) + "...should be true");
+
   }
 }
