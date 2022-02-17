@@ -1,0 +1,17 @@
+
+TNPG: Pikovo (Lauren Lee, Jack Chen)
+APCS
+HW65 -- How Many Queens Can a Thinker Place, If a Thinker Can Place Queens...
+2022-02-16
+time spent: 1 hr
+
+ * QCC:
+ * The current solve method starts from the upper-leftmost corner of the board. Would it be possible to devise a solution that
+ starts from another row in that leftmost column?
+
+  * DISCO:
+  * A wrapper class is a method that calls a helper method
+  * simple is better
+  * You can use recursion in a for loop
+  * base case is when recursive call should end
+ 
