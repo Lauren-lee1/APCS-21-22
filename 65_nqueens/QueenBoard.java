@@ -27,11 +27,7 @@ public class QueenBoard
    */
   public boolean solve()
   {
-    int x = 0;
-    if (0 >= board.length){
-      return addQueen();
-    }
-    return false;
+    return solveH(_board.length);
   }
 
 
@@ -40,12 +36,25 @@ public class QueenBoard
    */
   private boolean solveH( int col )
   {
-    for (int i = 0; i < _board.length; i++){
-      if(_board[i][col] == 0){
-        return true;
+    int numQ = 0;
+    int r = 0;
+     if (numQ == col+1){
+       return true;
+     } else if (solveH(col-1)){
+       if (addQueen(r))
+       return true;
+     } else if ()
+    if (col == 0){
+      return true;
+    } else if (c){
+      if (addQueen(col - 1, col)){
+        return solveH(col+1);
+      } else{
+        return false
       }
+    } else {
+      return addQueen(col - 1, col)
     }
-    return false;
   }
 
 
@@ -55,9 +64,9 @@ public class QueenBoard
       String row = "";
       for (int n = 0; n < _board[i].length; n++){
         if (_board[i][n] != 1) {
-          row = row + "_";
+          row = row + " _ ";
         } else {
-          row = row + "Q";
+          row = row + " Q ";
         }
       }
       System.out.println(row);
@@ -177,6 +186,8 @@ public class QueenBoard
        0	0	0	0	-1
        0	0	0	0	0
     */
+  b.solve();
+  b.printSolution();
 
   }
 
