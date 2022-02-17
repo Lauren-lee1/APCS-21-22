@@ -85,9 +85,9 @@ such that the group sums to the given target with these additional constraints:
       return groupSum5(start+2, nums, target - nums[start]);
     } else if (nums[start] % 5 == 0){
       return groupSum5(start+1, nums, target - nums[start]);
-    } else if (groupSum5(start+1, nums, target - nums[start]) == true) {
+    } else if (groupSum5(start+1, nums, target - nums[start])) {
       return true;
-    } else if (groupSum5(start+1, nums, target) == true){
+    } else if (groupSum5(start+1, nums, target)){
       return true;
     }
      return false;
@@ -102,15 +102,18 @@ array {1, 2, 2, 2, 5, 2}, either all three 2's in the middle must be chosen or n
 all as a group. (one loop can be used to find the extent of the identical values).
 */
  public static boolean groupSumClump(int start, int[] nums, int target){
-   if (start > = nums.length){
-     return target == 0;
-   } else if (nums[start] == nums[start + 1]){
-     return groupSumClump(start+1, nums, target - nums[start])
+   if (start >= nums.length){
+     if (target == 0){
+       return true;
+     }
+   } else if (nums[start] == nums[start+1]){
+       return groupSumClump(start + 1, nums, target - nums[start]);
    } else if (groupSumClump(start+1, nums, target - nums[start])) {
      return true;
    } else if (groupSumClump(start+1, nums, target)){
      return true;
    }
+   return false;
  }
 
 /*
@@ -168,9 +171,9 @@ like, and make the initial call to your recursive helper from splitArray(). (No 
     System.out.println(groupSum5(0, f, 12) + "...should be false");
 
     int [] g = new int [] {1, 2, 4, 8, 1};
-    int [] g = new int [] {1, 4, 4, 8};
+    int [] h = new int [] {1, 4, 4, 8};
     System.out.println(groupSumClump(0, a, 10) + "...should be true");
-    System.out.println(groupSumClump(0, f, 14) + "...should be true");
-    System.out.println(groupSumClump(0, f, 14) + "...should be false");
+    System.out.println(groupSumClump(0, g, 14) + "...should be true");
+    System.out.println(groupSumClump(0, h, 14) + "...should be false");
   }
 }
