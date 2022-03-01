@@ -17,7 +17,7 @@ time spent: 1 hr
 
  * QCC:
  * The current solve method starts from the upper-leftmost corner of the board. Would it be possible to devise a solution that
- starts from another row in that leftmost column? 
+ starts from another row in that leftmost column?
  */
 
 public class QueenBoard
@@ -181,8 +181,6 @@ public class QueenBoard
   public static void main( String[] args )
   {
     QueenBoard b = new QueenBoard(5);
-    QueenBoard c = new QueenBoard(5);
-    QueenBoard d = new QueenBoard(8);
     System.out.println(b);
     /** should be...
        0	0	0	0	0
@@ -212,11 +210,45 @@ public class QueenBoard
        0	0	0	0	-1
        0	0	0	0	0
     */
+    QueenBoard c = new QueenBoard(1);
+    QueenBoard d = new QueenBoard(2);
+    QueenBoard e = new QueenBoard(3);
+    QueenBoard f = new QueenBoard(4);
+    QueenBoard g = new QueenBoard(5);
+    QueenBoard h = new QueenBoard(6);
+    QueenBoard i = new QueenBoard(7);
+    QueenBoard j = new QueenBoard(8);
+    QueenBoard k = new QueenBoard(9);
+    QueenBoard l = new QueenBoard(10);
   c.solve();
   c.printSolution();
-
+System.out.println();
   d.solve();
   d.printSolution();
+System.out.println();
+  e.solve();
+  e.printSolution();
+System.out.println();
+  f.solve();
+  f.printSolution();
+System.out.println();
+  g.solve();
+  g.printSolution();
+System.out.println();
+  h.solve();
+  h.printSolution();
+System.out.println();
+  i.solve();
+  i.printSolution();
+System.out.println();
+  j.solve();
+  j.printSolution();
+System.out.println();
+  k.solve();
+  k.printSolution();
+System.out.println();
+  l.solve();
+  l.printSolution();
 
   }
 

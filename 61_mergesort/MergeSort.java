@@ -65,7 +65,6 @@ public class MergeSort
    ******************************************************/
   public static int[] sort( int[] arr )
   {
-    System.out.println("step");
     if(arr.length>1){
       int[] one = new int[arr.length/2];
       for (int i = 0; i < (arr.length/2); i++){
