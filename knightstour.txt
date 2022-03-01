@@ -1,0 +1,50 @@
+Lauren Lee, Jack Chen
+TNPG: Pikovo
+APCS
+HW67 -- A Knight Goes on Tour
+2022-02-28
+time spent: 1.5 hr
+
+Givens/ Assumptions
+- The knight starts in one of the four corners of the board
+  * its more beneficial to start at the corner because the corner has the least pathways so starting there ensures that there will be a space the knight can go from the corner.
+- It is an empty n by n board
+- The knight can not cross a previously crossed place on the board or a place out of the board
+- The knight can only move in an L shape (+-2, +- 1) or (+-1, +-2) so it would have 8 possible places
+to move to
+
+Goal
+- The knight has travelled across the board without crossing a place it had previously
+been at, so all spaces on the board have been filled
+
+Finished Product
+- Print out the board with numbers representing the knight's move as it has travelled on it
+
+Algo:
+- Starting from the corner, you move the knight clockwise in a spiraling motion to fill the outer spaces of the board.
+The outer ring of spaces takes priority to be completed. If the outer ring the knight plans to move appears to have no available spots, it
+would move to the next inner ring and fill that one until an opportunity to enter the outer ring appears again. Once the outer rings are completely filled,
+it would go to the inner rings and repeat the process until the ring is filled.
+
+=> But it does not always work for the even board. The last place the knight would be at in a odd board would be in the center of the board. However,
+an even board does not have a center. As the knight travels and the outer rings are filled, the untravelled region reduces itself into a smaller even
+board, such as a 2x2 or a 4x4 which is impossible to traverse.
+
+Similar to nQueens:
+- Uses recursion to create a tree with different possibilities. It backtracks if the node leads to an inviable solution
+- Marks places where new pawns can be placed
+
+Different from nQueens:
+- Knights can only reduce the size of the board by 1 and the knights are more restricted in their movement patterns
+- Queens can be placed anywhere on the board and when they are placed, they reduce the size of the board by a column
+- Knights only marks the place a knight has traversed before
+- Queens marks the place where the queen is and the possible places it can travel
+
+Which is harder:
+We think the Knights Tour is harder because when a queen is put down in the nQueen problem, it reduces the size of the board which makes it easier for us to see possible solutions.
+There are also less pieces to put on the board, therefore less configurations. Also the queens in the nQueens problem are placed left to right while the knights can be placed in a more variable fashion.
+
+Testing:
+- 5x5 and 7x7 works
+- 2x2, 3x3, 4x4 don't work
+(for our algo)
