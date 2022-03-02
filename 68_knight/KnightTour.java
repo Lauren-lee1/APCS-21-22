@@ -177,20 +177,21 @@ class TourFinder
 
   public void findTour( int x, int y, int moves )
   {
-    //delay(50); //slow it down enough to be followable
+    delay(50); //slow it down enough to be followable
 
     //if a tour has been completed, stop animation
     if ( _solved) System.exit(0);
 
     //primary base case: tour completed
+    //+1
     if ( moves == _sideLength*_sideLength+1  ) {
       _solved = true;
       System.out.println( this ); //refresh screen
       return;
     }
     //other base case: stepped off board or onto visited cell
-    if ( _board[x][y] == -1 || _board[x][y] != 0 ) {
-      System.out.println( this );
+    if (_board[x][y] != 0 ) {
+      //System.out.println( this );
       return;
     }
     //otherwise, mark current location
@@ -202,7 +203,7 @@ class TourFinder
 
       System.out.println( this ); //refresh screen
 
-      //delay(1000); //uncomment to slow down enough to view
+      delay(1000); //uncomment to slow down enough to view
 
       /******************************************
        * Recursively try to "solve" (find a tour) from
