@@ -2,7 +2,7 @@
 // APCS pd8
 // HW68 -- recursively probing for a closed cycle
 // 2022-02-28m
-// time spent:  hrs
+// time spent:  1.3 hrs
 
 /***
  * SKELETON
@@ -15,16 +15,23 @@
  * $ java KnightTour [N]
  *
  * ALGO
- *
+ * The findTour() method will continue to run, testing out different ways the knight can move until it reaches a solution
+ * If not solution can be met, it returns the board as it was initialized
+ * If the current movement of the knight places the knight off the board or on an already visited cell, the knight tries to move in a different way The different ways the knight moves is through recursion.
  * DISCO
- *
+ * Originally we had it be solved when moves == _sideLength*_sideLength but we must add one to it because we only know its solved when all the cells have been visited and we are trying to make an extra move
+ * We didn't have to rely on the method to return something for us to use recursion
+ * how to use time in the terminal
+ * What System.out.println(this); did
+ * general formatting for the board
  * QCC
- *
+ * We got it to work but still confused on how it is able to backtrack without knowing the move before
+
  * Mean execution times for boards of size n*n:
- * n=5   __s    across __ executions
- * n=6   __s    across __ executions
- * n=7   __s    across __ executions
- * n=8   __s    across __ executions
+ * n=5   0.398s    across 3 executions
+ * n=6   2.298s    across 3 executions
+ * n=7   __s    across 2 executions
+ * n=8   __s    across 2 executions
  *
  * POSIX PROTIP: to measure execution time from BASH, use time program:
  * $ time java KnightTour 5
@@ -170,13 +177,13 @@ class TourFinder
 
   public void findTour( int x, int y, int moves )
   {
-    delay(50); //slow it down enough to be followable
+    //delay(50); //slow it down enough to be followable
 
     //if a tour has been completed, stop animation
     if ( _solved) System.exit(0);
 
     //primary base case: tour completed
-    if ( moves == _board.length*_board.length  ) {
+    if ( moves == _sideLength*_sideLength+1  ) {
       _solved = true;
       System.out.println( this ); //refresh screen
       return;
@@ -195,7 +202,7 @@ class TourFinder
 
       System.out.println( this ); //refresh screen
 
-      delay(1000); //uncomment to slow down enough to view
+      //delay(1000); //uncomment to slow down enough to view
 
       /******************************************
        * Recursively try to "solve" (find a tour) from
@@ -207,53 +214,14 @@ class TourFinder
        *     . h . a .
       ******************************************/
       findTour (x+1,y-2,moves+1);
-      if (_solved == false){
-        findTour(x-1,y+2,moves-1);
-      } else{
-        return;
-      }
       findTour(x+2,y-1,moves+1);
-      if (_solved == false){
-        findTour(x-2,y+1,moves-1);
-      } else{
-        return;
-      }
       findTour(x+2,y+1,moves+1);
-      if (_solved == false) {
-        findTour(x-2,y-1,moves-1);
-      } else{
-        return;
-      }
       findTour(x+1,y+2,moves+1);
-      if (_solved == false){
-        findTour(x-1,y-2,moves-1);
-      }else{
-        return;
-      }
       findTour(x-1,y+2,moves+1);
-      if (_solved == false) {
-        findTour(x+1,y-2, moves-1);
-      }else{
-        return;
-      }
       findTour(x-2,y+1, moves+1);
-      if (_solved == false) {
-        findTour(x+2,y-1, moves-1);
-      }else{
-        return;
-      }
       findTour(x-2,y-1, moves+1);
-      if (_solved == false) {
-        findTour(x+2,y+1, moves-1);
-      }else{
-        return;
-      }
       findTour(x-1,y-2, moves+1);
-      if (_solved == false) {
-        findTour(x+1,y+2, moves-1);
-      }else{
-        return;
-      }
+  
 
       //If made it this far, path did not lead to tour, so back up...
       // (Overwrite number at this cell with a 0.)
