@@ -30,8 +30,8 @@
  * Mean execution times for boards of size n*n:
  * n=5   0.398s    across 3 executions
  * n=6   2.298s    across 3 executions
- * n=7   __s    across 2 executions
- * n=8   __s    across 2 executions
+ * n=7   2306s    across 2 executions
+ * n=8   2187s    across 2 executions
  *
  * POSIX PROTIP: to measure execution time from BASH, use time program:
  * $ time java KnightTour 5
@@ -221,7 +221,7 @@ class TourFinder
       findTour(x-2,y+1, moves+1);
       findTour(x-2,y-1, moves+1);
       findTour(x-1,y-2, moves+1);
-  
+
 
       //If made it this far, path did not lead to tour, so back up...
       // (Overwrite number at this cell with a 0.)
