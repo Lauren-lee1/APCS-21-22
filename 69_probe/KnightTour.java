@@ -20,8 +20,8 @@
  * QCC
  *
  * Mean execution times for boards of size n*n:
- * n=5   __s    across 5 executions
- * n=6   __s    across 5 executions
+ * n=5   0.0984s    across 5 executions
+ * n=6   0.1276s    across 5 executions
  * n=7   __s    across 5 executions
  * n=8   __s    across 5 executions
  *
@@ -71,6 +71,23 @@ public class KnightTour
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // PUSHING FARTHER...
     // Systematically attempt to solve from every position on the board?
+  /*  for( int i=2; i < n+2; i++ ){
+      for( int j=2; j < n+2; j++ ){
+        tf.findTour(i,j,1);
+        if (tf._solved == false){
+          System.out.println("failed");;
+        } else {
+          System.out.println("success");
+          for( int a=2; a < n+2; a++ ){
+            for( int b=2; b < n+2; b++ ){
+              _board[a][b] = 0;
+            }
+          }
+          tf._solved = false;
+        }
+      }
+    }
+    */
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   }//end main()
@@ -83,7 +100,7 @@ class TourFinder
   //instance vars
   private int[][] _board;
   private int _sideLength; //board has dimensions n x n
-  private boolean _solved = false;
+  public boolean _solved = false;
 
   //constructor -- build board of size n x n
   public TourFinder( int n )
@@ -155,7 +172,7 @@ class TourFinder
     //delay(50); //slow down enough to make "backtracking" visible
 
     //if a tour has been completed, stop animation
-    if ( _solved ) System.exit(0);
+    //if ( _solved ) System.exit(0);
 
     //primary base case: tour completed
     if ( moves > _sideLength*_sideLength ) {
