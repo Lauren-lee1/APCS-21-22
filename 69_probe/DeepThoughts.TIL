@@ -1,0 +1,31 @@
+NiceLovelyAlgorithms: Lauren Lee, Alif Rahman, Nafiz Labib
+APCS pd8
+HW69-- Making Sense
+2022-03-02
+time spent:  0.6 hrs
+
+* Mean execution times for boards of size n*n:
+* n=5   0.3507s    across 3 executions
+* n=6   0.1276s    across 3 executions
+* n=7   2.699s     across 3 executions
+* n=8   1.643s    across 3 executions
+
+  1.
+      q0: From any starting position, can an open tour always be found? Explain.
+        If we know a solution exists on an n*n board, it is not true that an open tour can always be found. The reason is that for a tour to be completed, there has to be at least two possible moves from every space because the knight has to be able to leave and exit at every space. A corner has exactly two spaces. Therefore, if we start at a position that is not the corner, the likelihood of a exit or enter point into a corner being visited already will increase, making a solution impossible in some cases.
+
+      q1: Same, but for closed tour.
+        A closed tour from a corner is highly unlikely as there is only one position in which the knight can return back to the corner and that position is likely to be filled before the end of the tour. In a general case, closed tours are much less likely that open tours because the knight has to return to the area that it came from which often can already be filled. Therefore, if an open tour is not always possible from every position, a closed tour is also not possible.
+
+      q2: How do you explain the increase in execution time as n increases?
+        Each new space on the board increases the run time exponentially. Therefore, as we add more spaces on the board by increasing n, the execution time increases as well.
+
+      q3: Thoughts on optimization?
+        If we know the size of a board, we know how many times the knight can go horizontally/vertically until it reaches a corner. Therefore, we can avoid making the night move in certain configurations (ex If the first move the knight can make is always horizontally left, we can stop it from moving that way if we know its at the left corner) if we know they are doomed.
+
+
+  2.State your cleanest algo for finding your way out of a maze (of the “2D” style discussed in class).
+      * the user can move either up, down, left, or right one space at a time
+      * if the user hits a wall/blockade or goes on a square already visited, it backtracks and moves in a direction that was different from the previous direction
+      * This repeats until we reach the end
+      * If all paths are taken, there is no solution.
