@@ -1,8 +1,12 @@
-// Clyde Sinclair
-// APCS pd0
-// HW69 -- maze solving (blind, depth-first)
-// 2022-03-03r
-// time spent:  hrs
+//test _solved
+//for unsolveable?
+//mazegenerator
+
+//NiceLovelyAlgorithms: Lauren Lee, Alif Rahman, Nafiz Labib
+//APCS pd8
+//HW69-- Making Sense
+//2022-03-03
+//time spent:  0.5 hrs
 
 /***
  * SKEELTON for
@@ -105,7 +109,13 @@ class MazeSolver
     return retStr;
   }
 
+  public int geth(){
+    return h;
+  }
 
+  public int getw(){
+    return w;
+  }
   /**
    * helper method to keep try/catch clutter out of main flow
    * @param n      delay in ms
@@ -127,32 +137,36 @@ class MazeSolver
    **/
   public void solve( int x, int y )
   {
-    delay( FRAME_DELAY ); //slow it down enough to be followable
+    //delay( FRAME_DELAY ); //slow it down enough to be followable
 
     //primary base case
-    if ( _solved) {
-	     System.exit(0);
+    if ( _maze[x][y] == EXIT ) {
+	    _solved = true;
+      System.exit(0);
     }
-    //other base cases
-    else if ( _maze[x][y] == '$') {
-	     _solved = true;
-       System.out.println(this);
-      return;
+    //other base cases: if space is outside maze
+    else if ( _maze[x][y] != PATH) {
+        return;
     }
     //otherwise, recursively solve maze from next pos over,
     //after marking current location
     else {
+        _maze[x][y] = HERO;
+        System.out.println( this ); //refresh screen
 
-      System.out.println( this ); //refresh screen
+        solve(x , y + 1);
+        solve(x , y - 1);
+        solve(x + 1, y);
+        solve(x - 1, y);
 
-???
-      System.out.println( this ); //refresh screen
+        _maze[x][y] = VISITED_PATH;
+        System.out.println( this ); //refresh screen
     }
   }
 
   //accessor method to help with randomized drop-in location
   public boolean onPath( int x, int y) {
-
+    return (_maze[x][y] == PATH);
   }
 
 }//end class MazeSolver
@@ -183,11 +197,18 @@ public class Maze
 
     //drop hero into the maze (coords must be on path)
     // ThinkerTODO: comment next line out when ready to randomize startpos
-    ms.solve( 4, 3 );
+    //ms.solve( 4, 3 );
 
     //drop our hero into maze at random location on path
-    // YOUR RANDOM-POSITION-GENERATOR CODE HERE
-    //ms.solve( startX, startY );
+    boolean start = false;
+    int startX = 0;
+    int startY = 0;
+    while (start == false){
+      startX = (int) (Math.random()*ms.getw());
+      startY = (int) (Math.random()*ms.geth());
+      start = ms.onPath(startX,startY);
+    }
+    ms.solve( startX, startY );
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
