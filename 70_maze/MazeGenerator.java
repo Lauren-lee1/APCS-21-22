@@ -6,6 +6,7 @@ public class MazeGenerator{
 
   private char[][] _maze;
   private int h, w;
+  private int sideh, sidew;
 
   final private char HERO =           '@';
   final private char PATH =           '#';
@@ -15,14 +16,14 @@ public class MazeGenerator{
 
   public MazeGenerator(){
     h=5;
+    sideh = h+2;
     w=4;
-    int sideh = h+2;
-    int sidew = w+2;
-    _maze = new char[sideh][sidew];
+    sidew = w+2;
+    _maze = new char[100][100];
 
     for( int i=0; i<sideh; i++){
         for (int n=0; n<sidew; n++){
-          _maze[i][n] = VISITED_PATH;
+          _maze[i][n] = WALL;
         }
     }
 /*
@@ -34,22 +35,23 @@ h+1
           _maze[i][n] = PATH;
         }
     }
+    _maze[(int) (Math.random()*h) +1][(int) (Math.random()*w) +1] = EXIT;
 
   }
 
   public MazeGenerator(int x, int y){
     h=x;
+    sideh = h+2;
     w=y;
-    int sideh = h+2;
-    int sidew = w+2;
-    _maze = new char[sideh][sidew];
+    sidew = w+2;
+
+    _maze = new char[100][100];
 
     for( int i=0; i<sideh; i++){
         for (int n=0; n<sidew; n++){
           _maze[i][n] = WALL;
         }
     }
-    _maze[(int) (Math.random()*h) +1][(int) (Math.random()*w) +1] = EXIT;
   //  addPath(randomx, randomy);
 
     for( int i=1; i<=sideh-1; i++){
@@ -94,8 +96,8 @@ h+1
     //emacs shortcut: M-x quoted-insert, ESC
 
     int i, j;
-    for( i=0; i<h+2; i++ ) {
-      for( j=0; j<w+2; j++ )
+    for( i=0; i<sideh; i++ ) {
+      for( j=0; j<sidew; j++ )
         retStr = retStr + _maze[j][i];
       retStr = retStr + "\n";
     }
@@ -105,8 +107,8 @@ h+1
   public File makeFile(String txt){
     String retStr = "";
     int i, j;
-    for( i=0; i<h+2; i++ ) {
-      for( j=0; j<w+2; j++ )
+    for( i=0; i<sideh; i++ ) {
+      for( j=0; j<sidew; j++ )
         retStr = retStr + _maze[j][i];
       retStr = retStr + "\n";
     }
@@ -123,9 +125,10 @@ h+1
   }
 
   public static void main(String[] args){
-    MazeGenerator maze = new MazeGenerator(20,20);
+    MazeGenerator maze = new MazeGenerator(19,20);
     System.out.println( "[2J" );
     System.out.println(maze);
+
   }
 
 
