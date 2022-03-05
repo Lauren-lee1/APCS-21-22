@@ -187,7 +187,10 @@ public class Maze
 
     if (mazeInputFile==null) { System.exit(0); }
 
-    MazeSolver ms = new MazeSolver( mazeInputFile );
+    MazeGenerator mg = new MazeGenerator(15,15);
+    mg.makeFile("20.maze");
+    //MazeSolver ms = new MazeSolver( mazeInputFile );
+    MazeSolver ms = new MazeSolver( "20.maze" );
 
     //clear screen
     System.out.println( "[2J" );
@@ -200,7 +203,7 @@ public class Maze
     //ms.solve( 4, 3 );
 
     //drop our hero into maze at random location on path
-    boolean start = false;
+    boolean start = false; 
     int startX = 0;
     int startY = 0;
     while (start == false){
@@ -209,6 +212,7 @@ public class Maze
       start = ms.onPath(startX,startY);
     }
     ms.solve( startX, startY );
+
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
