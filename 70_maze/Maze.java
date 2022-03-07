@@ -19,12 +19,12 @@
  * (mazefile is ASCII representation of a maze, using symbols below)
  *
  * ALGORITHM for finding exit from starting position:
- *  <INSERT YOUR SUMMARY OF ALGO HERE>
- *
+*  The solve method moves the hero in one of its four directions. If it is unable to move in that direction (meaning a wall is in that direction), it moves in another direction. If all four directions are exhausted, then that means the current path does not lead to the solution. It marks that path as visited (meaning the path now acts like a wall) and tries another path and tries moving in all four directions again. This repeats until it reaches the exit. Once the hero is at the exit, the   function is solved.  
  * DISCO
- *
+ * There needs to be a buffer around the maze to prevent an out of bounds error
  * QCC
- *
+ * We still dont' understand what the use of the _solved variable is for
+ * How do we make a maze generator that is solvable from all starting positions.
  ***/
 
 //enable file I/O
@@ -203,7 +203,7 @@ public class Maze
     //ms.solve( 4, 3 );
 
     //drop our hero into maze at random location on path
-    boolean start = false; 
+    boolean start = false;
     int startX = 0;
     int startY = 0;
     while (start == false){
