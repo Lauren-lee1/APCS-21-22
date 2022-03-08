@@ -10,7 +10,7 @@ public class Mysterion {
   int lower and int upper -- indexes that partition the array to only the parts we want to work with
   int target -- the element that we want to have all lower numbers to the left and all higher numbers to the right
   */
-  public static void mysterion(int[] arr, int lower, int upper, int target) {
+  public static void partition(int[] arr, int lower, int upper, int target) {
     //swap the upper index with the target to take the target out of the parts of the array we will be comparing
     int compareTar = arr[target];
     int targetNum = arr[target];
@@ -30,7 +30,7 @@ public class Mysterion {
     int upperNum = arr[upper];
     arr[upper]=arr[splitIndex];
     arr[splitIndex] = upperNum;
-  } // mysterion
+  } // partition
 
   private static String strArray(int[] a){
 		String output = "{" + a[0];
@@ -44,53 +44,53 @@ public class Mysterion {
   public static void main(String[] args) {
 
     int[] og = new int[] {7,1,5,12,3}; // original array
-    mysterion(og, 0, 4, 2);
+    partition(og, 0, 4, 2);
     System.out.println(strArray(og) + " ... should be {1,3,5,12,7}");
 
     System.out.println("-------------------------------------------");
     int[] doesitSort = new int[] {7,1,5,12,3}; // does the array sort itself as we use the method in ascending target index order?
-    mysterion(doesitSort, 0, 4, 0);
+    partition(doesitSort, 0, 4, 0);
     System.out.println(strArray(doesitSort) + " ... should be {3,1,5,7,12}");
-    mysterion(doesitSort, 0, 4, 1);
+    partition(doesitSort, 0, 4, 1);
     System.out.println(strArray(doesitSort) + " ... should be {1,12,5,7,3}");
-    mysterion(doesitSort, 0, 4, 2);
+    partition(doesitSort, 0, 4, 2);
     System.out.println(strArray(doesitSort) + " ... should be {1,3,5,7,12}");
-    mysterion(doesitSort, 0, 4, 3);
+    partition(doesitSort, 0, 4, 3);
     System.out.println(strArray(doesitSort) + " ... should be {1,3,5,7,12}");
-    mysterion(doesitSort, 0, 4, 4);
+    partition(doesitSort, 0, 4, 4);
     System.out.println(strArray(doesitSort) + " ... should be {1,3,5,7,12}");
     // yes it does
     System.out.println("-------------------------------------------");
 
     System.out.println("-------------------------------------------");
     int[] des = new int[] {12,7,5,3,1}; //worst case?
-    mysterion(des, 0, 4, 0);
+    partition(des, 0, 4, 0);
     System.out.println(strArray(des) + " ... should be {1,7,5,3,12}");
-    mysterion(des, 0, 4, 1);
+    partition(des, 0, 4, 1);
     System.out.println(strArray(des) + " ... should be {1,5,3,7,12}");
-    mysterion(des, 0, 4, 2);
+    partition(des, 0, 4, 2);
     System.out.println(strArray(des) + " ... should be {1,3,12,7,5}");
-    mysterion(des, 0, 4, 3);
+    partition(des, 0, 4, 3);
     System.out.println(strArray(des) + " ... should be {1,3,5,7,12}");
-    mysterion(des, 0, 4, 4);
+    partition(des, 0, 4, 4);
     System.out.println(strArray(des) + " ... should be {1,3,5,7,12}");
     // takes four method calls to sort (length-1)
     System.out.println("-------------------------------------------");
 
     int[] changeLower = new int[] {7,1,5,12,3}; //changing lower limit
-    mysterion(changeLower, 1, 4, 2);
+    partition(changeLower, 1, 4, 2);
     System.out.println(strArray(changeLower) + "... should be {7,1,3,5,12}");
 
     System.out.println("-------------------------------------------");
 
     int[] changeUpper = new int[] {7,1,5,12,3}; //changing upper limit
-    mysterion(changeUpper, 0, 3, 2);
+    partition(changeUpper, 0, 3, 2);
     System.out.println(strArray(changeUpper) + "... should be {1,5,12,7,3}");
 
     System.out.println("-------------------------------------------");
 
     int[] bigger= new int[] {7,1,5,12,3,17,15}; //making array larger
-    mysterion(bigger, 0, 6, 3);
+    partition(bigger, 0, 6, 3);
     System.out.println(strArray(bigger) + "... should be {7,1,5,3,12,17,15}");
 
   } // main
