@@ -23,19 +23,32 @@ public class MazeGenerator{
 
     for( int i=0; i<sideh; i++){
         for (int n=0; n<sidew; n++){
-          _maze[i][n] = WALL;
+          _maze[i][n] = VISITED_PATH;
         }
     }
-/*
-h+2
-h+1
-*/
+
     for( int i=1; i<sideh-1; i++){
         for (int n=1; n<sidew-1; n++){
           _maze[i][n] = PATH;
         }
     }
-    _maze[(int) (Math.random()*h) +1][(int) (Math.random()*w) +1] = EXIT;
+
+    int exith = (int) (Math.random()*h) +1;
+    int exitw = (int) (Math.random()*w) +1;
+    _maze[exith][exitw] = EXIT;
+
+    int pathh = (int) (Math.random()*h) +1;
+    int pathw = (int) (Math.random()*w) +1;
+
+    makePath(pathh, pathw);
+
+    for( int i=0; i<sideh; i++){
+        for (int n=0; n<sidew; n++){
+          if (_maze[i][n]==VISITED_PATH){
+            _maze[i][n] = WALL;
+          }
+        }
+    }
 
   }
 
@@ -49,22 +62,126 @@ h+1
 
     for( int i=0; i<sideh; i++){
         for (int n=0; n<sidew; n++){
+          _maze[i][n] = VISITED_PATH;
+        }
+    }
+
+    for( int i=1; i<sideh-1; i++){
+        for (int n=1; n<sidew-2; n++){
           _maze[i][n] = WALL;
         }
     }
-  //  addPath(randomx, randomy);
 
-    for( int i=1; i<=sideh-1; i++){
-        for (int n=1; n<=sidew-1; n++){
-          int random = (int) (Math.random()*2);
-          if (random == 0){
-            _maze[i][n] = PATH;
+    int exith = (int) (Math.random()*h) +1;
+    int exitw = (int) (Math.random()*w) +1;
+    _maze[exith][exitw] = EXIT;
+
+    int pathh = (int) (Math.random()*h) +1;
+    int pathw = (int) (Math.random()*w) +1;
+
+    makePath(pathh, pathw);
+
+    for( int i=0; i<sideh; i++){
+        for (int n=0; n<sidew; n++){
+          if (_maze[i][n]==VISITED_PATH){
+            _maze[i][n] = WALL;
           }
         }
     }
 
-    _maze[(int) (Math.random()*h) +1][(int) (Math.random()*w) +1] = EXIT;
+  }
 
+  public void makePath(int x, int y){
+    if (_maze[x][y] == EXIT){
+      System.exit(0);
+    } else if (_maze[x][y] == VISITED_PATH){
+      if (_maze[])
+    } else if(_maze[x][y+1] == PATH && _maze[x-1][y+1] == PATH){
+      _maze[x][y] = PATH;
+      System.out.println( this );
+      int rand = (int) (Math.random()*2);
+      if (rand == 0){
+        makePath(x,y-1);
+      } else{
+        makePath(x+1,y);
+      }
+    } else if(_maze[x+1][y] == PATH && _maze[x+1][y-1] == PATH){
+      _maze[x][y] = PATH;
+      System.out.println( this );
+      int rand = (int) (Math.random()*2);
+      if (rand == 0){
+        makePath(x,y+1);
+      } else{
+        makePath(x-1,y);
+      }
+    } else if(_maze[x][y+1] == PATH && _maze[x+1][y+1] == PATH){
+      _maze[x][y] = PATH;
+      System.out.println( this );
+      int rand = (int) (Math.random()*2);
+      if (rand == 0){
+        makePath(x,y-1);
+      } else{
+        makePath(x-1,y);
+      }
+    } else if(_maze[x-1][y] == PATH && _maze[x-1][y-1] == PATH){
+      _maze[x][y] = PATH;
+      System.out.println( this );
+      int rand = (int) (Math.random()*2);
+      if (rand == 0){
+        makePath(x,y+1);
+      } else{
+        makePath(x+1,y);
+      }
+    } else if(_maze[x][y-1] == PATH && _maze[x+1][y-1] == PATH){
+      _maze[x][y] = PATH;
+      System.out.println( this );
+      int rand = (int) (Math.random()*2);
+      if (rand == 0){
+        makePath(x,y+1);
+      } else{
+        makePath(x-1,y);
+      }
+    } else if(_maze[x-1][y] == PATH && _maze[x-1][y+1] == PATH){
+      _maze[x][y] = PATH;
+      System.out.println( this );
+      int rand = (int) (Math.random()*2);
+      if (rand == 0){
+        makePath(x,y-1);
+      } else{
+        makePath(x+1,y);
+      }
+    } else if(_maze[x][y-1] == PATH && _maze[x-1][y-1] == PATH){
+      _maze[x][y] = PATH;
+      System.out.println( this );
+      int rand = (int) (Math.random()*2);
+      if (rand == 0){
+        makePath(x,y+1);
+      } else{
+        makePath(x+1,y);
+      }
+    } else if(_maze[x+1][y] == PATH && _maze[x+1][y+1] == PATH){
+      _maze[x][y] = PATH;
+      System.out.println( this );
+      int rand = (int) (Math.random()*2);
+      if (rand == 0){
+        makePath(x,y-1);
+      } else{
+        makePath(x-1,y);
+      }
+    } else {
+      _maze[x][y] = PATH;
+      System.out.println( this );
+      int rand = (int) (Math.random()*4);
+      if (rand == 0){
+        makePath(x,y+1);
+      } else if (rand == 1){
+        makePath(x,y-1);
+      } else if (rand == 2){
+        makePath(x+1,y);
+      } else {
+        makePath(x-1,y);
+      }
+    }
   }
 /*
   public  void addPath(int x, int y){

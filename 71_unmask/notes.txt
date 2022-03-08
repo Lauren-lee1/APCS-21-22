@@ -1,0 +1,27 @@
+Pikovo: Lauren Lee and Jack Chen
+APCS pd8
+HW71 -- Whut Dis.
+2022-03-07
+time spent: 0.5
+
+
+DISCO
+* the array eventually sorts itself as we call the method and increment target every call
+* if we change the upper and lower bounds, the numbers not within the bounds are left alone
+
+QCC
+* How many times do we need to run the method until we can sort the array (the array sorts in <length method calls but this could change based on the order of the numbers. )
+* our hypothesis is that it is length-1 sorts in worst case
+
+q0: What does it do?
+The method does not necessarily sort the array, rather it places elements in the array in respect to the target element we are looking at.
+Places elements less than target on the left side and elements greater than target on the right side. Only elements within the bounds are considered
+If the element is outside of bounds, it is left where it is.
+
+int[] arr -- array we are working with
+int lower and int upper -- indexes that partition the array to only the parts we want to work with
+int target -- the element that we want to have all lower numbers to the left and all higher numbers to the right
+
+
+q1: What is its Big-Oh runtime?
+O(n). Traverses the array one time

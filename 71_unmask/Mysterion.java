@@ -1,26 +1,32 @@
-/*
-<Frist> <Lsat>
-APCS
-HW<nn> -- <Title/Topic/Summary... (Aim for concision, brevity, CLARITY. Write to your future self...)>
-<yyyy>-<mm>-<dd>
-time spent: <elapsed time in hours, rounded to nearest tenth>
-*/
 
 public class Mysterion {
+
+  /*
+  The method does not necessarily sort the array, rather it places elements in the array in respect to the target element we are looking at.
+  Places elements less than target on the left side and elements greater than target on the right side. Only elements within the bounds are considered
+  If the element is outside of bounds, it is left where it is.
+
+  int[] arr -- array we are working with
+  int lower and int upper -- indexes that partition the array to only the parts we want to work with
+  int target -- the element that we want to have all lower numbers to the left and all higher numbers to the right
+  */
   public static void mysterion(int[] arr, int lower, int upper, int target) {
+    //swap the upper index with the target to take the target out of the parts of the array we will be comparing
     int compareTar = arr[target];
     int targetNum = arr[target];
     arr[target]=arr[upper];
     arr[upper]=targetNum;
+
     int splitIndex = lower;
-    for (int i = 0; i < upper; i++) {
-      if (arr[i] < compareTar) {
+    for (int i = lower; i < upper; i++) { //looks through the array from lower to upper limit (minus target)
+      if (arr[i] < compareTar) { //if the numbers is lower than the target, it placed on the left side of the array.
         int split = arr[splitIndex];
         arr[splitIndex]=arr[i];
         arr[i] = split;
         splitIndex += 1;
       }
     }
+    //target is placed before its greater numbers and after its lower numbers
     int upperNum = arr[upper];
     arr[upper]=arr[splitIndex];
     arr[splitIndex] = upperNum;
@@ -36,8 +42,56 @@ public class Mysterion {
   		}
 
   public static void main(String[] args) {
-    int[] arr = new int[] {7,1,5,12,3};
-    mysterion(arr, 0, 4, 2);
-    System.out.println(strArray(arr));
+
+    int[] og = new int[] {7,1,5,12,3}; // original array
+    mysterion(og, 0, 4, 2);
+    System.out.println(strArray(og) + " ... should be {1,3,5,12,7}");
+
+    System.out.println("-------------------------------------------");
+    int[] doesitSort = new int[] {7,1,5,12,3}; // does the array sort itself as we use the method in ascending target index order?
+    mysterion(doesitSort, 0, 4, 0);
+    System.out.println(strArray(doesitSort) + " ... should be {3,1,5,7,12}");
+    mysterion(doesitSort, 0, 4, 1);
+    System.out.println(strArray(doesitSort) + " ... should be {1,12,5,7,3}");
+    mysterion(doesitSort, 0, 4, 2);
+    System.out.println(strArray(doesitSort) + " ... should be {1,3,5,7,12}");
+    mysterion(doesitSort, 0, 4, 3);
+    System.out.println(strArray(doesitSort) + " ... should be {1,3,5,7,12}");
+    mysterion(doesitSort, 0, 4, 4);
+    System.out.println(strArray(doesitSort) + " ... should be {1,3,5,7,12}");
+    // yes it does
+    System.out.println("-------------------------------------------");
+
+    System.out.println("-------------------------------------------");
+    int[] des = new int[] {12,7,5,3,1}; //worst case?
+    mysterion(des, 0, 4, 0);
+    System.out.println(strArray(des) + " ... should be {1,7,5,3,12}");
+    mysterion(des, 0, 4, 1);
+    System.out.println(strArray(des) + " ... should be {1,5,3,7,12}");
+    mysterion(des, 0, 4, 2);
+    System.out.println(strArray(des) + " ... should be {1,3,12,7,5}");
+    mysterion(des, 0, 4, 3);
+    System.out.println(strArray(des) + " ... should be {1,3,5,7,12}");
+    mysterion(des, 0, 4, 4);
+    System.out.println(strArray(des) + " ... should be {1,3,5,7,12}");
+    // takes four method calls to sort (length-1)
+    System.out.println("-------------------------------------------");
+
+    int[] changeLower = new int[] {7,1,5,12,3}; //changing lower limit
+    mysterion(changeLower, 1, 4, 2);
+    System.out.println(strArray(changeLower) + "... should be {7,1,3,5,12}");
+
+    System.out.println("-------------------------------------------");
+
+    int[] changeUpper = new int[] {7,1,5,12,3}; //changing upper limit
+    mysterion(changeUpper, 0, 3, 2);
+    System.out.println(strArray(changeUpper) + "... should be {1,5,12,7,3}");
+
+    System.out.println("-------------------------------------------");
+
+    int[] bigger= new int[] {7,1,5,12,3,17,15}; //making array larger
+    mysterion(bigger, 0, 6, 3);
+    System.out.println(strArray(bigger) + "... should be {7,1,5,3,12,17,15}");
+
   } // main
 }
