@@ -102,7 +102,7 @@ public class QuickSelect
 
   public static int QuickSelect( int arr[], int y ) {
     counter = 0;
-    return QuickSelectHelper(arr, 0, arr.length - 1, arr.length / 2, y);
+    return QuickSelectHelper(arr, 0, arr.length - 1, y);
   }
 
   public static int QuickSelectHelper( int arr[], int left, int right, int y ) {

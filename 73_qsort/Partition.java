@@ -89,7 +89,7 @@ public class Partition
      int v = arr[pivot];
 
      swap( pivot, hiPos, arr);
-     int storePos = left;
+     int storePos = LoPos;
 
      for( int i = LoPos; i < hiPos; i++ ) {
        if ( arr[i] <= v) {
@@ -118,7 +118,7 @@ public class Partition
     for( int testPIVOT = 0; testPIVOT < 5; testPIVOT++ ) {
       System.out.println("arr1: ");
       printArr(arr1);
-      partition(arr1,0,4,testPIVOT);
+      partition(arr1,0,4);
       System.out.println("after partition w/ loPos=0, hiPos=4, pvtPos="
                          + testPIVOT +"...");
       printArr(arr1);
@@ -126,7 +126,7 @@ public class Partition
 
       System.out.println("arr3:");
       printArr(arr3);
-      partition(arr3,0,4,testPIVOT);
+      partition(arr3,0,4);
       System.out.println("after partition w/ loPos=0, hiPos=4, pvtPos="
                          + testPIVOT +"...");
       printArr(arr3);
@@ -134,7 +134,7 @@ public class Partition
 
       System.out.println("arr4:");
       printArr(arr4);
-      partition(arr4,0,4,testPIVOT);
+      partition(arr4,0,4);
       System.out.println("after partition w/ loPos=0, hiPos=4, pvtPos="
                          + testPIVOT +"...");
       printArr(arr4);
@@ -142,7 +142,7 @@ public class Partition
 
       System.out.println("arr5:");
       printArr(arr5);
-      partition(arr5,0,4,testPIVOT);
+      partition(arr5,0,4);
       System.out.println("after partition w/ loPos=0, hiPos=4, pvtPos="
                          + testPIVOT +"...");
       printArr(arr5);
