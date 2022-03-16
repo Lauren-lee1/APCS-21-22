@@ -62,7 +62,7 @@ public class LList implements List //interface def must be in this dir
     if ( index < 0 || index >= size() )
       throw new IndexOutOfBoundsException();
     LLNode temp = _head;
-    for (int i = 0 ; i <= index ; i++){
+    for (int i = 0 ; i < index ; i++){
       temp = temp.getNext();
     }
     return temp.getCargo();
@@ -78,7 +78,7 @@ public class LList implements List //interface def must be in this dir
       throw new IndexOutOfBoundsException();
 
     LLNode temp = _head;
-    for (int i = 0 ; i <= index ; i++){
+    for (int i = 0 ; i < index ; i++){
       temp = temp.getNext();
      }
      String old = temp.getCargo();
