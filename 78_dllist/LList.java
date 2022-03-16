@@ -1,14 +1,44 @@
+// Team Not Gonna Lie (Nafiz Labib, Gabriel Thompson, Lauren Lee)
+// APCS pd8
+// HW78 -- Double Up
+// 2022-03-16w
+// time spent: 0.5 hrs
+//kts -- 1
+/*
+    DISCO
+      *
+    QCC
+      * How can we utilize the tail? Right now, the list is a double link list, yet tail takes no functionality
+      * How do we represent tail on a diagram?
+    ALGO ADD
+      1. If the index you want to add in is 0, just add the new node at the front of the List by creating tmp that contains the newval and linking it to _head
+      2. If not :
+          1) Create a new DLLNode tmp to take the value of _head and a new DLLNode newNode that contains the newVal
+          2) iterate through tmp until you reach one before your desired index
+          3) Link the rest of tmp's list to newNode
+          4) Link tmp to newNode
+          5) Increment the size
+    ALGO REM
+      1. If the index is 0, just set the _head to the next head to remove the first value and return it
+      2. else:
+        1) create a new DLLNode tmp to take the value of head
+        2) iterate through tmp until one below your desire index
+        3) Store the desired index in a variable to return later
+        4) set the next head of tmp to the head of the original next head over, skipping the cargo of the desired index of removal
+        5) decrement the size
+*/
+
 /*****************************************************
  * class LList
- * Implements a linked list of LLNodes, each containing String data
+ * Implements a linked list of DLLNodes, each containing String data
  * new in v2: add-at-index, remove
  *****************************************************/
 
 public class LList implements List //your List interface must be in same dir
-{ 
+{
 
   //instance vars
-  private LLNode _head;
+  private DLLNode _head;
   private int _size;
 
   // constructor -- initializes instance vars
@@ -20,27 +50,27 @@ public class LList implements List //your List interface must be in same dir
 
 
   //--------------v  List interface methods  v--------------
-    
+
   public boolean add( String newVal )
   {
-    LLNode tmp = new LLNode( newVal, _head );
+    DLLNode tmp = new DLLNode( newVal, _head, null );
     _head = tmp;
     _size++;
     return true;
   }
 
-    
+
   public String get( int index )
   {
     if ( index < 0 || index >= size() )
 	    throw new IndexOutOfBoundsException();
 
     String retVal;
-    LLNode tmp = _head; //create alias to head
+    DLLNode tmp = _head; //create alias to head
 
     //walk to desired node
     for( int i=0; i < index; i++ )
-	    tmp = tmp.getNext();
+	    tmp = tmp.getHead();
 
     //check target node's cargo hold
     retVal = tmp.getCargo();
@@ -54,11 +84,11 @@ public class LList implements List //your List interface must be in same dir
     if ( index < 0 || index >= size() )
 	    throw new IndexOutOfBoundsException();
 
-    LLNode tmp = _head; //create alias to head
+    DLLNode tmp = _head; //create alias to head
 
     //walk to desired node
     for( int i=0; i < index; i++ )
-	    tmp = tmp.getNext();
+	    tmp = tmp.getHead();
 
     //store target node's cargo
     String oldVal = tmp.getCargo();
@@ -72,7 +102,7 @@ public class LList implements List //your List interface must be in same dir
 
   //return number of nodes in list
   public int size() { return _size; }
-    
+
 
   //insert a node containing newVal at position index
   public void add( int index, String newVal ) {
@@ -80,21 +110,21 @@ public class LList implements List //your List interface must be in same dir
     if ( index < 0 || index >= size() )
 	    throw new IndexOutOfBoundsException();
 
-    LLNode newNode = new LLNode( newVal, null );
+    DLLNode newNode = new DLLNode( newVal, null, null );
 
     //if index==0, insert node before head node
-    if ( index == 0 ) 
+    if ( index == 0 )
 	    add( newVal );
     else {
-	    LLNode tmp = _head; //create alias to head
+	    DLLNode tmp = _head; //create alias to head
 
 	    //walk to node before desired node
 	    for( int i=0; i < index-1; i++ )
-        tmp = tmp.getNext();
+        tmp = tmp.getHead();
 
 	    //insert new node
-	    newNode.setNext( tmp.getNext() );
-	    tmp.setNext( newNode );
+	    newNode.setHead( tmp.getHead() );
+	    tmp.setHead( newNode );
 
 	    //increment size attribute
 	    _size++;
@@ -109,7 +139,7 @@ public class LList implements List //your List interface must be in same dir
 	    throw new IndexOutOfBoundsException();
 
     String retVal;
-    LLNode tmp = _head; //create alias to head
+    DLLNode tmp = _head; //create alias to head
 
     //if index==0, remove head node
     if ( index == 0 ) {
@@ -117,18 +147,18 @@ public class LList implements List //your List interface must be in same dir
 	    retVal = _head.getCargo();
 
 	    //remove target node
-	    _head = _head.getNext();	    
+	    _head = _head.getHead();
     }
     else {
 	    //walk to node before desired node
 	    for( int i=0; i < index-1; i++ )
-        tmp = tmp.getNext();
+        tmp = tmp.getHead();
 
 	    //check target node's cargo hold
-	    retVal = tmp.getNext().getCargo();
+	    retVal = tmp.getHead().getCargo();
 
 	    //remove target node
-	    tmp.setNext( tmp.getNext().getNext() );
+	    tmp.setHead( tmp.getHead().getHead() );
     }
 
     //decrement size attribute
@@ -144,10 +174,10 @@ public class LList implements List //your List interface must be in same dir
   public String toString()
   {
     String retStr = "HEAD->";
-    LLNode tmp = _head; //init tr
+    DLLNode tmp = _head; //init tr
     while( tmp != null ) {
 	    retStr += tmp.getCargo() + "->";
-	    tmp = tmp.getNext();
+	    tmp = tmp.getHead();
     }
     retStr += "NULL";
     return retStr;
@@ -192,7 +222,7 @@ public class LList implements List //your List interface must be in same dir
     System.out.println( "...after add(4,phat): " );
     System.out.println( james );
 
-    System.out.println( "...after remove last: " 
+    System.out.println( "...after remove last: "
                         + james.remove( james._size-1) );
     System.out.println( james );
 
@@ -207,5 +237,3 @@ public class LList implements List //your List interface must be in same dir
   }
 
 }//end class LList
-
-
