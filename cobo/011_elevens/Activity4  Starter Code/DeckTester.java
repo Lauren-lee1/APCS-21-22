@@ -51,6 +51,11 @@ public class DeckTester {
 		System.out.println();
 		System.out.println();
 
-		/* *** TO BE COMPLETED IN ACTIVITY 4 *** */
+		String[] ranks1 = {"ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king"};
+		String[] suits1 = {"spades", "hearts", "clubs", "diamonds"};
+		int[] pointValues1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+		Deck d1 = new Deck(ranks1, suits1, pointValues1);
+		System.out.println("**** 52 Card Deck Methods ****");
+		System.out.println("  toString:\n" + d1.toString());
 	}
 }

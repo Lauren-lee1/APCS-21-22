@@ -1,3 +1,9 @@
+// Team FORGE - Andrey Sokolov + Geese & Ziying Jian + Pinky, Lauren Lee + Ted
+// APCS pd8
+// L07 - But These Go Up To Eleven
+// 2022-03-19
+// time spent: 3 humorous hours
+
 /**
  * Card.java
  *

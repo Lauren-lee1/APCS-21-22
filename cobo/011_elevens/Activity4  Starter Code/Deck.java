@@ -1,3 +1,9 @@
+// Team FEORGE - Andrey Sokolov + Geese & Ziying Jian + Pinky, Lauren Lee + Ted
+// APCS pd8
+// L07 - But These Go Up To Eleven
+// 2022-03-19
+// time spent: 3 humorous hours
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -62,7 +68,13 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		for(int k = cards.size()-1; k >= 0; k--){
+			int r = (int)(Math.random()*k+1);
+			Card temp = cards.get(k);
+			cards.set(k, cards.get(r));
+			cards.set(r, temp);
+		}
+		this.size = cards.size(); //to indicate that you can use all the cards
 	}
 
 	/**

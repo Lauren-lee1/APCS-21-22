@@ -1,3 +1,11 @@
+// Team FEORGE - Andrey Sokolov + Geese & Ziying Jian + Pinky, Lauren Lee + Ted
+// APCS pd8
+// L07 - But These Go Up To Eleven
+// 2022-03-19
+// time spent: 3 humorous hours
+
+import java.util.Arrays;
+
 /**
  * This class provides a convenient way to test shuffling methods.
  */
@@ -51,6 +59,20 @@ public class Shuffler {
 	 */
 	public static void perfectShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		int[] shuffled = new int[values.length];
+		int k = 0;
+		for(int j = 0; j < ((values.length + 1) / 2); j++){
+			shuffled[k] = values[j];
+			k+=2;
+		}
+		k = 1;
+		for(int j = ((values.length + 1) / 2); j < values.length; j++){
+			shuffled[k] = values[j];
+			k+=2;
+		}
+		for(int i=0 ; i < values.length;i++){
+			values[i] = shuffled[i];
+		}
 	}
 
 	/**
@@ -65,6 +87,11 @@ public class Shuffler {
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
 	public static void selectionShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		for(int k = values.length-1; k >= 0; k--){
+			int r = (int)(Math.random()*k+1);
+			int temp = values[k];
+			values[k] = values[r];
+			values[r] = temp;
+		}
 	}
 }

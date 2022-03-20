@@ -1,0 +1,9 @@
+// Team FEORGE - Andrey Sokolov + Geese & Ziying Jian + Pinky, Lauren Lee + Ted
+// APCS pd8
+// L07 - But These Go Up To Eleven
+// 2022-03-19
+// time spent: 3 humorous hours
+
+1. The games are pretty similar, with the only difference being the sums needed to discard cards and as a result the chance of winning the games
+2. You construct the board in the ElevensBoard class...
+3. They pretty much do, as the only difference between all three games is the sum needed to discard the cards and the royal card combinations needed to kill the monarch swines.

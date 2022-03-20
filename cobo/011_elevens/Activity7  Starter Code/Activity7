@@ -1,0 +1,21 @@
+// Team FEORGE - Andrey Sokolov + Geese & Ziying Jian + Pinky, Lauren Lee + Ted
+// APCS pd8
+// L07 - But These Go Up To Eleven
+// 2022-03-19
+// time spent: 3 humorous hours
+
+Questions:
+1. You need cards!
+2. You check the cards you have on the board and see if you can discard any of them according to the rules of the game. If you can, discard them.
+3. It misses crucial methods such as checking if you can actually discards or not.
+4, a. dealMyCards is called at the end of the ElevensBoard constructor.
+b. anotherPlayIsPossible()
+c. (pretend theres a diagram here)
+d.
+public static void printCards(EleventsBoard board){
+  List<Integer> cIndexes = board.cardIndexes();
+    for(int i = 0; i < cIndexes.size(); i++){
+      System.out.println(board.cardAt(i));
+    }
+}
+e. anotherPlayIsPossible(), as you need to see the cards placed down before you can actually be able to check if another play is possible.
