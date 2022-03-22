@@ -1,0 +1,5 @@
+1. Combine 5 and 6
+2. Yes, because the only way to win the game is to get rid of all the cards.
+You can clear the entire board with by combining these three.
+3. No strategy. Each card can only be paired once so it doesn't matter the
+order.

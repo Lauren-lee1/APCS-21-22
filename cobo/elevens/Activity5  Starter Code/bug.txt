@@ -1,3 +1,21 @@
 Activity 5:
 
-YOU DONT HAVE A BYTEFILE SO YOU CANT FIX ANYTHING
+Buggy1
+Name: isEmpty()
+Possible Code Error: The CollegeBoard screwed up the conditional for isEmpty and because of that isEmpty is false for an empty deck
+
+Buggy2
+Name: deckSize
+Possible Code Error: Size is initialized incorrectly or not initialized at all
+
+Buggy3
+Name: shuffle()
+Possible Code Error: The code is shuffling the same positions of the deck
+
+Buggy4
+Name: testOneCard()
+Possible Code Error: The called card has not been initialized
+
+Buggy5
+Name: shuffle()
+Possible Code Error: The conditional is not setup correctly. shuffle decrements too much in a for loop

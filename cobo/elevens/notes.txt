@@ -8,7 +8,7 @@ DISCO:
 - We learned how to play elevens
 - It took a LOT longer to complete this lab than expected
 - Most of the time was spent reading as opposed to programming
-- We hate collegeboard a lot more
+- Javadocs is pretty nifty
 - There are different ways to shuffle a deck
 - Fred + George = FEORGE
 
@@ -17,3 +17,4 @@ QCC:
 - WHERE IS ACTIVITY 6?
 - WHERE IS ACTIVITY 5 BYTE FILE?
 - Why do we care about the royals in variations of elevens? They're literally useless and take up space.
+
