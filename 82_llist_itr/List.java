@@ -2,14 +2,14 @@
  * interface List
  * Specifies actions a List must be able to perform.
  * New in Version 6: Iterability via FOREACH
- *  (The Iterable interface is a superinterface to interface List, 
+ *  (The Iterable interface is a superinterface to interface List,
  *   in the actual Java library. Interface Iterable is what allows
  *   a for-each loop to be run over an instance of a collection class.)
  **/
 
 import java.util.Iterator;
 
-public interface List<T> extends Iterable<T>
+public interface List<T> extends Iterable<T> //any list that implements List<T>, will extend iterable as published by java
 {
     //add element T to end of list
     //always return true
@@ -31,6 +31,6 @@ public interface List<T> extends Iterable<T>
     public int size();
 
     //return an Iterator over the elements in list
-    Iterator<T> iterator();
+    Iterator<T> iterator(); //constructor that returns an iterator
 
 }//end interface List
