@@ -1,0 +1,31 @@
+// Team Not Gonna Lie (Nafiz Labib, Gabriel Thompson, Lauren Lee)
+// APCS
+// HW80 -- Generically Speaking
+// 2022-03-24 
+// time spent: 0.7hrs
+
+DISCO
+  * You can put a type between the gang signs for a class to specify the "type" of the list or object
+
+QCC
+  * How does the type argument that goes between the gang signs differ from a standard constructor argument?
+     -> We're aware that it specififes a type, rather than a variable, but why can't this just be represented in the constructor arguments
+  * For ArrayList, we don't necessarily need to specify the type. Is that the same with LList.
+
+ALGO ADD
+  1. If the index you want to add in is 0, just add the new node at the front of the List by creating tmp that contains the newval and linking it to _head
+  2. If not :
+      1) Create a new DLLNode tmp to take the value of _head and a new DLLNode newNode that contains the newVal
+      2) iterate through tmp until you reach one before your desired index
+      3) Link the rest of tmp's list to newNode
+      4) Link tmp to newNode
+      5) Increment the size
+
+ALGO REM
+  1. If the index is 0, just set the _head to the next head to remove the first value and return it
+  2. else:
+      1) create a new DLLNode tmp to take the value of head
+      2) iterate through tmp until one below your desire index
+      3) Store the desired index in a variable to return later
+      4) set the next head of tmp to the head of the original next head over, skipping the cargo of the desired index of removal
+      5) decrement the size
