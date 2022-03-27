@@ -84,12 +84,12 @@ public class ItrWork
   //returns a list containing the odd numbers in L
   public static List<Integer> oddsB( List<Integer> L )
   {
-    Iterator it = L.iterator();
+    Iterator<Integer> it = L.iterator(); //need to itr an Interator<Integer>
     List<Integer> odds = new ArrayList<Integer>();
     Integer next;
 
     while (it.hasNext()) {
-      next = (Integer) it.next();
+      next = it.next();
       if ( next % 2 == 1 ) odds.add(next);
     }
 
