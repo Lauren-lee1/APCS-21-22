@@ -2,10 +2,27 @@ Team Not Gonna Lie (Nafiz Labib, Gabriel Thompson, Lauren Lee)
 APCS
 HW82 -- Roll Your Own Iterator
 2022-03-25
-time spent:
+time spent:1.5
 
 
     DISCO
-     *
+     * Nested class inherits all methods and instance variable of larger class
     QCC
-     * 
+     * Changing the addFirst() method significantly impacted our code
+
+     public void addFirst( T newFirstVal )
+     {
+       //insert new node before first node (prev=null, next=_head)
+       _head = new DLLNode<T>( newFirstVal, null, _head );
+
+       if ( _size == 0 )
+         _tail = _head;
+       else
+         _head.getNext().setPrev( _head );
+       _size++;
+     }
+
+     --> works as given
+
+     Though, if we decide to add {} to indicate start and end for if and else, we start losing elements to the void
+     Why does adding {} significantly change our code functionality when its more of a stylistic choice?
