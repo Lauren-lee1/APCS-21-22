@@ -1,0 +1,16 @@
+// Team Not Gonna Lie (Nafiz Labib, Gabriel Thompson, Lauren Lee)
+// APCS
+// HW85 -- Leon Leonwood Stack
+// 2022-03-30w
+// time spent: 0.5hrs
+
+DISCO --
+  - When implementing an interface that has generic typing, you must generically type the interface name as well.
+  - For pop(), we should check if the stack is empty first.
+  - Java's LL interface includes getFirst, getLast, removeFirst, removeLast, so we don't have to find out the place to
+  carry out these methods ourselves.
+
+QCC --
+  - We used .size() methods rather than size instance variables.
+  - How can we write better test cases for this?
+  - Is Z just a placeholder, or does it have a specific purpose?
