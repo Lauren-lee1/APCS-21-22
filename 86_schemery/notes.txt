@@ -1,0 +1,14 @@
+Team Not Gonna Lie (Nafiz Labib, Gabriel Thompson, Lauren Lee)
+APCS
+HW86 -- What a Racket
+2022-03-30w
+time spent: 3 hrs
+
+DISCO --
+  - expr.split("\\s+") splits a string into a String array by the spaces
+  - Integer.parseInt() returns the numerical value of the String
+
+QCC --
+  - How can we perform the operation recursively?
+  - How can we perform the operation with only one stack?
+  - We spent a lot of time talking about the algorithm and collectively understanding it before coding so it took a large amount of time but very little was on the computer.
