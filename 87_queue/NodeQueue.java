@@ -120,6 +120,7 @@ private class LLNode<QUASAR>
     public String toString() { return _cargo.toString(); }
 
   }// end class LLNode
+
     //main method for testing
     public static void main( String[] args )
     {
