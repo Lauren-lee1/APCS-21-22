@@ -67,3 +67,12 @@ Activity 3:
 
 7. What is the id of the weather stations? What is the west most weather station?
 8. Not a lot.
+
+Activity 4:
+1. Who was the best tennis player in 2017?
+2.We used a data set the provide all match statistics in 2017 from Kaggle. 
+3. We fetched the data from the xml file and placed it in an array to analyze the data.
+4. The class had instance variables for each column we needed and accessor methods for them. 
+5.
+Tournament[] data = ds.fetchArray("Tournament","row/tourney_name", "row/winner_name");
+
