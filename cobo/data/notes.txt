@@ -1,4 +1,4 @@
-Feorge: Lauren Lee, Ziying Jian, Andrey Sokolov
+Feorge: Lauren Lee, ted, Ziying Jian, pinky, Andrey Sokolov, geez
 APCS
 L08: America's Next Top Data Scientist
 2022-04-04
