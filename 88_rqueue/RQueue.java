@@ -1,4 +1,4 @@
-// Gabriel Thompson
+// NGL: Lauren Lee, Nafiz Labib, Gabriel Thompson
 // APCS
 // HW88 -- BPC Kiddies Do Not Wait in Line Either
 // 2022-04-04
