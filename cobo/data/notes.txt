@@ -1,19 +1,69 @@
-Team Phantom Tollbooth :: Clyde Sinclair, Fierce Dragon
+Feorge: Lauren Lee, Ziying Jian, Andrey Sokolov
 APCS
-LAB08 --
-2022-04-05
-time spent: <elapsed time in hours, rounded to nearest tenth>
+L08: America's Next Top Data Scientist
+2022-04-04
+time spent: 1.0 hr
+
+DISCO:
+- how to use classpath
+- how to manipulate data from outsourced website
+QCC:
+- Why did module3 need an arraylist?
+- Why do we need a scanner?
+- Why is classpath so complicated
+- Why do we need sinbad? and What is sinbad?
 
 
-DISCO
+Activity 1:
+1. Piazza, StuyCS.org, Youtube
+2. StuyCS -- nothing
+Piazza -- registration information, university/school name
+Youtube -- watch time, email, search history
 
+3. A delimiter is a charter that seperates text strings like "," or ";". It is necessary to seperate data that is delimited.
+4. All the data in one column is the same type, which is represented by the first row of the column
 
-QCC
+5. Tennis and chinese food
+6. How many grand slams have Djokovic, Nadal, and Federer won?
+What is the least eaten chinese food in the world?
+-- modified to What is my grandma's recipe to make white cut chicken?
 
+7. Both from kaggle.com
+a. ATP matches
+b. Federer vs. Djokovic vs. Nadal -- Whi is the GOAT?
+8.
+a. 882 columns
+b. 917 columns
 
-<TNPG>'s CSV FLOW:
-<insert your description of your tools and workflow in creating, editing CSV files>
+9. The data can make suggesting relevant content to musers more accurate. The data can be also be used in studies pertaining to people who use the service.
+10. They are a collection of data sets provided by ATP.
+11. Yes because if I need to go to the hospital, I'd rather want them to know about my past medical history even if it invades my privacy.
 
+Acitivty 2:
+1. Cereal
+2. What's the most encouraging thing happening in your life right now?
+3. public class Cereal
+4. 7 instance variables
+5. _type - charter
+_calories -- int
+_nutrition -- int[]
+_shelf -- int
+_weight -- _double
+_cups -- double
+_rating -- _double
+_name -- String
 
-TRUBZ
-<this lab involves using tools that are likely to introduce hiccups; log any troubleshooting issues here>
+8. Which is the healthiest cereal?
+9. Name of the Cereal
+10. make a _name instance variable
+
+Activity 3:
+1. Temperature at Atlanta, Hartsfield is 59F
+2. PHSF -- Hawaii
+3. Hawaii 65F
+4. 48
+5. By the wind speed
+6. Pago Pago, AS, Samoa -- NSTU
+
+7. What is the id of the weather stations? What is the west most weather station?
+8. Not a lot.
