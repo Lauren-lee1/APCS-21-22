@@ -1,0 +1,13 @@
+TNPG: NGL -- Nafiz Labib, Gabriel Thompson, Lauren Lee
+APCS
+HW90: Swabbing the Deque
+2022-04-12
+time spent: 0.5 hr
+
+DISCO -
+- Very similar to what we did for ALQueue and LLQueue code, using one-line statements in methods by using methods provided in Java API.
+
+
+QCC -
+- We decided to not code additional methods found in the Deque API like offer and poll. They are very similar
+to our current methods besides including things like throwing exceptions whenever it's necessary.
