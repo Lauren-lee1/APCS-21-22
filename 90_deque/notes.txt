@@ -1,13 +1,14 @@
 TNPG: NGL -- Nafiz Labib, Gabriel Thompson, Lauren Lee
-APCS
-HW90: Swabbing the Deque
-2022-04-12
-time spent: 0.5 hr
+APCS pd8
+HW91: Deque the Halls
+2022-04-13
+time spent: 0.3 hr
 
 DISCO -
 - Very similar to what we did for ALQueue and LLQueue code, using one-line statements in methods by using methods provided in Java API.
 
 
 QCC -
-- We decided to not code additional methods found in the Deque API like offer and poll. They are very similar
-to our current methods besides including things like throwing exceptions whenever it's necessary.
+- We decided to not code additional methods found in the Deque API like offer and poll. They are very similar to our current methods besides including things like throwing exceptions whenever it's necessary.
+  - After further consideration, we decided to add pollFirst and pollLast for completeness.
+  - We decided to NOT implement offerFirst and offerLast because we are using LinkedList, so there will be no issues regarding capacity violations.   

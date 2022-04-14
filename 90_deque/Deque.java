@@ -1,3 +1,9 @@
+// TNPG: NGL -- Nafiz Labib, Gabriel Thompson, Lauren Lee
+// APCS pd8
+// HW91: Deque the Halls
+// 2022-04-13
+// time spent: 0.3 hr
+
 /***
  * interface Deque
  * Includes only methods listed in AP subset of Java
@@ -29,6 +35,13 @@ public interface Deque<QUASAR>
   public QUASAR getFirst();
   //Returns the last element of the queue without dequeuing it.
   public QUASAR getLast();
+
+  //Retrieves and removes the first element of this deque, or returns null if this deque is empty.
+  public QUASAR pollFirst();
+  //Retrieves and removes the last element of this deque, or returns null if this deque is empty.
+  public QUASAR pollLast();
+  /***
+***/
 
 
   //~~~~~~~~~~~~~~~~~~~end AP subset~~~~~~~~~~~~~~~~~~~
