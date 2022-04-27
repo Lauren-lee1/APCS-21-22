@@ -1,3 +1,9 @@
+// gaslighting gatekeeping girlbosses -- Lauren Lee, Kevin Xiao, Kevin Li
+// APCS
+// L09 -- Some Folks Call It a Charades
+// 2022-04-26
+// time spent: 5 hrs
+
 import java.awt.CardLayout;
 
 import javax.swing.JFrame;
@@ -42,6 +48,11 @@ public class CelebrityFrame extends JFrame
 		//The first line of any subclass should ALWAYS be a correct call to the super constructor.
 		super();
 		controller = controllerRef;
+		panelCards = new JPanel();
+		gamePanel = new CelebrityPanel(controller);
+		startPanel = new StartPanel(controller);
+		setupFrame();
+
 
 	}
 
@@ -50,8 +61,17 @@ public class CelebrityFrame extends JFrame
 	 */
 	private void setupFrame()
 	{
-		startPanel = new StartPanel(controller);
+		panelCards.setLayout(new CardLayout());
+		//panelCards.add(gamePanel);
+		panelCards.add(startPanel);
+		this.setSize(500, 500);
+		this.setTitle("Celebrity Game");
+		panelCards.add(startPanel);
+		this.add(panelCards);
+		//this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+		this.setVisible(true);
+		replaceScreen("START");
 	}
 
 	/**
@@ -60,7 +80,12 @@ public class CelebrityFrame extends JFrame
 	 */
 	public void replaceScreen(String screen)
 	{
-
+		if(screen.equals("START")){
+			setContentPane(startPanel);
+		} else if(screen.equals("GAME")){
+			gamePanel.addClue(controller.sendClue());
+			setContentPane(gamePanel);
+		}
 	}
 
 }
