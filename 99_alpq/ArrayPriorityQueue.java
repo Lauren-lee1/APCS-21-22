@@ -1,0 +1,74 @@
+import java.util.ArrayList;
+public class ArrayPriorityQueue implements PriorityQueue{
+
+  private ArrayList<Integer> _queue;
+
+  public ArrayPriorityQueue(){
+    _queue = new ArrayList<Integer>();
+  }
+
+  /*
+  pass thru functionality woohoo
+  runtime: O(n)
+  */
+  public void add(Integer a){
+    _queue.add(a);
+  }
+
+  /*
+  runtime: O(n)
+  */
+  public boolean isEmpty(){
+    return _queue.isEmpty();
+  }
+
+  /*
+  runtime: O(n)
+  */
+  public Integer peekMin(){
+    Integer min = _queue.get(0);
+    for(int i = 1; i<_queue.size(); i++){
+      if(_queue.get(i) < min){
+        min = _queue.get(i);
+      }
+    }
+    return min;
+  }
+
+    /*
+    runtime: O(n)
+    */
+    //ArrayList remove() method returns a boolean?
+    public Integer removeMin(){
+      Integer removed = peekMin();
+      _queue.remove(removed);
+      return removed;
+
+    }
+
+    public String toString(){
+      return _queue.toString();
+    }
+
+    public static void main(String[] args){
+      ArrayPriorityQueue poo = new ArrayPriorityQueue();
+      poo.add(5);
+      poo.add(3);
+      poo.add(4);
+      poo.add(7);
+      poo.add(8);
+      poo.add(1);
+      System.out.println("poo: "+  poo);
+
+      System.out.println();
+      System.out.println("min: " + poo.peekMin());
+      System.out.println("removeMin: " + poo.removeMin());
+      System.out.println("min: " + poo.peekMin());
+      System.out.println("removeMin: " + poo.removeMin());
+      System.out.println("min: " + poo.peekMin());
+      System.out.println("removeMin: " + poo.removeMin());
+
+      System.out.println();
+      System.out.println("poo: "+  poo);
+    }
+}
