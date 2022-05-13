@@ -10,7 +10,7 @@ public interface PriorityQueue{
     /*
     adds an item to this priority queue
     */
-    public void add(Integer x);
+    public void add(int x);
 
     /*
     Returns true if this stack is empty, otherwise returns false.
@@ -20,10 +20,10 @@ public interface PriorityQueue{
     /*
     Returns the smallest item stored in this priority queue without removing it
     */
-    public Integer peekMin();
+    public int peekMin();
 
     /*
     Removes and returns the smallest item stored in this priority queue
     */
-    public Integer removeMin();
+    public int removeMin();
 }

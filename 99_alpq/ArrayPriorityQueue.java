@@ -19,7 +19,7 @@ public class ArrayPriorityQueue implements PriorityQueue{
   pass thru functionality woohoo
   runtime: O(n)
   */
-  public void add(Integer a){
+  public void add(int a){
     _queue.add(a);
   }
 
@@ -33,8 +33,8 @@ public class ArrayPriorityQueue implements PriorityQueue{
   /*
   runtime: O(n)
   */
-  public Integer peekMin(){
-    Integer min = _queue.get(0);
+  public int peekMin(){
+    int min = _queue.get(0);
     for(int i = 1; i<_queue.size(); i++){
       if(_queue.get(i) < min){
         min = _queue.get(i);
@@ -47,10 +47,8 @@ public class ArrayPriorityQueue implements PriorityQueue{
     runtime: O(n)
     */
     //ArrayList remove() method returns a boolean?
-    public Integer removeMin(){
-      Integer removed = peekMin();
-      _queue.remove(removed);
-      return removed;
+    public int removeMin(){
+      return _queue.remove(peekMin());
 
     }
 
