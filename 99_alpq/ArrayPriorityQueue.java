@@ -1,3 +1,11 @@
+/*
+Gatekeeping Gaslighting Girlbosses: Kevin Xiao, Lauren Lee, Kevin Li
+APCS
+HW99: Some Are More Equal Than Others, Codified
+2022-05-13
+time spent: 0.5 hours
+*/
+
 import java.util.ArrayList;
 public class ArrayPriorityQueue implements PriorityQueue{
 
