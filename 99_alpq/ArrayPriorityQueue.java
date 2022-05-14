@@ -48,7 +48,7 @@ public class ArrayPriorityQueue implements PriorityQueue{
     */
     //ArrayList remove() method returns a boolean?
     public int removeMin(){
-      return _queue.remove(peekMin());
+      return _queue.remove(_queue.indexOf(peekMin()));
 
     }
 
