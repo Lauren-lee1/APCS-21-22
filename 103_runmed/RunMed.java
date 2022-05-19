@@ -24,8 +24,8 @@ for getting the median
 1. If the size of the heaps are the same, then return the average of the two roots
 2. If the size of the heaps are different, return the root of the larger heap
     */
-    ALHeapMax minVals;
-    ALHeapMin maxVals;
+    public ALHeapMax minVals;
+    public ALHeapMin maxVals;
 
     public RunMed() {
         maxVals = new ALHeapMin();
@@ -49,26 +49,19 @@ for getting the median
         //If both heaps are empty, just add the value to min
         if (maxVals.isEmpty() && minVals.isEmpty()) {
             maxVals.add(newVal);
-        }
-
-        if (newVal == maxVals.peekMin() || newVal == minVals.peekMax()) {
-            if (maxVals.size() < minVals.size()) {
-                maxVals.add(newVal);
-            } else {
-                minVals.add(newVal);
-            }
-        }
-
+        } 
         //If the value is greater than median, add it into the minHeap (maxVals). Otherwise, put it in
         else if (newVal > getMedian()) {
             //if you are adding to maxVals, and maxVals has a higher size, add the root of maxVals into minVals to balance things out
             if (maxVals.size() > minVals.size()) {
+                System.out.println("min of maxVal moved");
                 minVals.add(maxVals.removeMin());
             }
             maxVals.add(newVal);
         } else {
             if (minVals.size() > maxVals.size()) {
-                minVals.add(maxVals.removeMin());
+                System.out.println("max of minVal moved");
+                maxVals.add(minVals.removeMax());
             }
             minVals.add(newVal);
         }

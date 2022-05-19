@@ -45,6 +45,8 @@ public class RunMedDriver
         System.out.print("this many ints have been seen: " + count + "\n");
 
         r.add(n);
+        //System.out.println("minVals: " + r.minVals);
+        //System.out.println("maxVals: " + r.maxVals);
         median = r.getMedian();
         System.out.print("median is now " + median + "\n");
       } catch (Exception e) {

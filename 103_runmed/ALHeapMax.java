@@ -1,8 +1,4 @@
 /**
-Gatekeeping Girlboss Gremlins: Lauren Lee, Kevin Li, Kevin Xiao
-APCS
-HW103 -- Erica’s Friends, Hugo, and The One in the Middle
-time spent: 1 hour
  * class ALHeap
  * Implements a min heap using an ArrayList as underlying container
  */
@@ -33,7 +29,7 @@ public class ALHeapMax
   public String toString()
   {
     //simple version:
-    return _heap.toString();
+    return _heap.toString(); 
 
     //prettier version:
     /*
@@ -113,7 +109,7 @@ public class ALHeapMax
    * ALGO:
    * <your clear && concise procedure here>
    */
-  public Integer removeMin()
+  public Integer removeMax()
   {
     if ( _heap.size() == 0 )
       return null;
